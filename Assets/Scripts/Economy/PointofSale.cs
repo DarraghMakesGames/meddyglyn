@@ -128,7 +128,7 @@ public class PointofSale : MonoBehaviour
 
     }
 
-
+    //The following switch statement checks the current market values and records the result so the POS can calculate sales price
     private void CheckValues()
     {
         switch (preferredFlavour)

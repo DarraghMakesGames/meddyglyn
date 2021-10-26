@@ -34,6 +34,8 @@ public class StorageManager : MonoBehaviour
     public string woodyProp;
     public string pepperyProp;
 
+    public int batchNumber;
+
     private AudioSource fillingSound;
 
     [SerializeField] private bool agingStarted;
@@ -72,7 +74,10 @@ public class StorageManager : MonoBehaviour
             sweetnessRating = vessel.GetComponent<VesselManager>().sweetnessRating;
             alcoholRating = vessel.GetComponent<VesselManager>().alcoholRating;
 
+            batchNumber = vessel.GetComponent<VesselManager>().batchNumber;
+
             valuePerML = vessel.GetComponent<ValueCalculator>().valuePerMl;
+
 
             //This reduces the amount left in the vessel by the capacity of this storage
             vessel.GetComponent<VesselManager>().totalLiquidContent = vessel.GetComponent<VesselManager>().totalLiquidContent - capacity;

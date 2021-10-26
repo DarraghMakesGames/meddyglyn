@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public static float batchesMade = 0;
     public static float profit;
+    public static int batchNumber = 1;
 
     private void Start()
     {

@@ -9,6 +9,8 @@ public class VesselManager : MonoBehaviour
     private GameObject carriedObj;
     private Transform carried;
 
+    public int batchNumber;
+
     [SerializeField] private GameObject cork;
     [SerializeField] private GameObject liquidLevel;
     
@@ -248,6 +250,8 @@ public class VesselManager : MonoBehaviour
             {
                 isFinished = true;
                 GameManager.batchesMade += 1;
+                batchNumber = GameManager.batchNumber;
+                GameManager.batchNumber += 1;
                 StopCoroutine("Fermentation");
             }
             

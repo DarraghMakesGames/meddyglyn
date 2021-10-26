@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RequirementCheck : MonoBehaviour
 {
+    public Contract contract;
     private Transform toBeChecked;
 
     public float targetVolume;
@@ -42,6 +43,18 @@ public class RequirementCheck : MonoBehaviour
 
     void Update()
     {
+
+    targetVolume = contract.targetVolume;
+    targetSweetness = contract.targetSweetness;
+    targetCitrus = contract.targetCitrus;
+    targetTart = contract.targetTart;
+    targetSour = contract.targetSour;
+    targetBitter = contract.targetBitter;
+    targetWoody = contract.targetWoody;
+    targetPeppery = contract.targetPeppery;
+    targetAge = contract.targetAge;
+    targetAlcohol = contract.targetAlcohol;
+
         if (this.gameObject.transform.childCount > 0){
             toBeChecked = this.gameObject.transform.GetChild(0);
             actualVolume = toBeChecked.GetComponent<StorageManager>().capacity;

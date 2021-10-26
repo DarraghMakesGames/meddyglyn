@@ -6,6 +6,8 @@ using UnityEngine;
 public class Contract : ScriptableObject
 {
 
+    //This ScriptableObject provides the template for creating new contracts
+
     public string contractName;
     public string description;
 

@@ -8,15 +8,29 @@ public class RequirementCheck : MonoBehaviour
     private Transform toBeChecked;
 
     public float targetVolume;
-    public float targetSweetness;
-    public float targetCitrus;
-    public float targetTart;
-    public float targetSour;
-    public float targetBitter;
-    public float targetWoody;
-    public float targetPeppery;
-    public float targetAge;
-    public float targetAlcohol;
+    public float targetMinSweetness;
+    public float targetMaxSweetness;
+    public float targetMinCitrus;
+    public float targetMaxCitrus;
+    public float targetMinTart;
+    public float targetMaxTart;
+    public float targetMinSour;
+    public float targetMaxSour;
+    public float targetMinBitter;
+    public float targetMaxBitter;
+    public float targetMinWoody;
+    public float targetMaxWoody;
+    public float targetMinPeppery;
+    public float targetMaxPeppery;
+    public float targetMinFloral;
+    public float targetMaxFloral;
+    public float targetMinEarthy;
+    public float targetMaxEarthy;
+    public float targetMinGreen;
+    public float targetMaxGreen;
+    public float targetMinAge;
+    public float targetMinAlcohol;
+    public float targetMaxAlcohol;
 
     public float actualVolume;
     public float actualSweetness;
@@ -26,6 +40,9 @@ public class RequirementCheck : MonoBehaviour
     public float actualBitter;
     public float actualWoody;
     public float actualPeppery;
+    public float actualFloral;
+    public float actualEarthy;
+    public float actualGreen;
     public float actualAge;
     public float actualAlcohol;
 
@@ -37,6 +54,9 @@ public class RequirementCheck : MonoBehaviour
     public bool matchesBitter = false;
     public bool matchesWoody = false;
     public bool matchesPeppery = false;
+    public bool matchesFloral = false;
+    public bool matchesEarthy = false;
+    public bool matchesGreen = false;
     public bool matchesAge = false;
     public bool matchesAlcohol = false;
 
@@ -45,27 +65,45 @@ public class RequirementCheck : MonoBehaviour
     {
 
     targetVolume = contract.targetVolume;
-    targetSweetness = contract.targetSweetness;
-    targetCitrus = contract.targetCitrus;
-    targetTart = contract.targetTart;
-    targetSour = contract.targetSour;
-    targetBitter = contract.targetBitter;
-    targetWoody = contract.targetWoody;
-    targetPeppery = contract.targetPeppery;
-    targetAge = contract.targetAge;
-    targetAlcohol = contract.targetAlcohol;
+    targetMinSweetness = contract.targetMinSweetness;
+    targetMaxSweetness = contract.targetMaxSweetness;
+    targetMinCitrus = contract.targetMinCitrus;
+    targetMaxCitrus = contract.targetMaxCitrus;
+    targetMinTart = contract.targetMinTart;
+    targetMaxTart = contract.targetMaxTart;
+    targetMinSour = contract.targetMinSour;
+    targetMaxSour = contract.targetMaxSour;
+    targetMinBitter = contract.targetMinBitter;
+    targetMaxBitter = contract.targetMaxBitter;
+    targetMinWoody = contract.targetMinWoody;
+    targetMaxWoody = contract.targetMaxWoody;
+    targetMinPeppery = contract.targetMinPeppery;
+    targetMaxPeppery = contract.targetMaxPeppery;
+    targetMinFloral = contract.targetMinFloral;
+    targetMaxFloral = contract.targetMaxFloral;
+    targetMinEarthy = contract.targetMinEarthy;
+    targetMaxEarthy = contract.targetMaxEarthy;
+    targetMinGreen = contract.targetMinGreen;
+    targetMaxGreen = contract.targetMaxGreen;
+    targetMinAge = contract.targetMinAge;
+    targetMinAlcohol = contract.targetMinAlcohol;
+    targetMaxAlcohol = contract.targetMaxAlcohol;
 
         if (this.gameObject.transform.childCount > 0){
             toBeChecked = this.gameObject.transform.GetChild(0);
             actualVolume = toBeChecked.GetComponent<StorageManager>().capacity;
             actualAlcohol = toBeChecked.GetComponent<StorageManager>().alcohol;
             actualSweetness = toBeChecked.GetComponent<StorageManager>().sweetness;
+            actualAge = toBeChecked.GetComponent<StorageManager>().age;
             actualCitrus = toBeChecked.GetComponent<StorageManager>().citrus;
             actualTart = toBeChecked.GetComponent<StorageManager>().tart;
             actualSour = toBeChecked.GetComponent<StorageManager>().sour;
             actualBitter = toBeChecked.GetComponent<StorageManager>().bitter;
             actualWoody = toBeChecked.GetComponent<StorageManager>().woody;
             actualPeppery = toBeChecked.GetComponent<StorageManager>().peppery;
+            actualFloral = toBeChecked.GetComponent<StorageManager>().floral;
+            actualEarthy = toBeChecked.GetComponent<StorageManager>().earthy;
+            actualGreen = toBeChecked.GetComponent<StorageManager>().green;
         }
         else if (this.gameObject.transform.childCount < 1){
             toBeChecked = null;
@@ -77,12 +115,15 @@ public class RequirementCheck : MonoBehaviour
             actualBitter = 0;
             actualWoody = 0;
             actualPeppery = 0;
+            actualFloral = 0;
+            actualEarthy = 0;
+            actualGreen = 0;
             actualAge = 0;
             actualAlcohol = 0;
 }
 
 
-        if (actualVolume == targetVolume)
+        if (actualVolume >= targetVolume)
         {
             matchesVolume = true;
         }
@@ -91,7 +132,16 @@ public class RequirementCheck : MonoBehaviour
             matchesVolume = false;
         }
 
-        if (actualSweetness == targetSweetness)
+        if (actualAge >= targetMinAge)
+        {
+            matchesAge = true;
+        }
+        else
+        {
+            matchesAge = false;
+        }
+
+        if (actualSweetness >= targetMinSweetness && actualSweetness <= targetMaxSweetness)
         {
             matchesSweetness = true;
         }
@@ -100,7 +150,16 @@ public class RequirementCheck : MonoBehaviour
             matchesSweetness = false;
         }
 
-        if (actualCitrus == targetCitrus)
+        if (actualAlcohol >= targetMinAlcohol && actualAlcohol <= targetMaxAlcohol)
+        {
+            matchesAlcohol = true;
+        }
+        else
+        {
+            matchesAlcohol = false;
+        }
+
+        if (actualCitrus >= targetMinCitrus && actualCitrus <= targetMaxCitrus)
         {
             matchesCitrus = true;
         }
@@ -109,7 +168,7 @@ public class RequirementCheck : MonoBehaviour
             matchesCitrus = false;
         }
 
-        if (actualTart == targetTart)
+        if (actualTart >= targetMinTart && actualTart <= targetMaxTart)
         {
             matchesTart = true;
         }
@@ -118,7 +177,7 @@ public class RequirementCheck : MonoBehaviour
             matchesTart = false;
         }
 
-        if (actualSour == targetSour)
+        if (actualSour >= targetMinSour && actualSour <= targetMaxSour)
         {
             matchesSour = true;
         }
@@ -127,7 +186,7 @@ public class RequirementCheck : MonoBehaviour
             matchesSour = false;
         }
 
-        if (actualBitter == targetBitter)
+        if (actualBitter >= targetMinBitter && actualBitter <= targetMaxBitter)
         {
             matchesBitter = true;
         }
@@ -136,7 +195,7 @@ public class RequirementCheck : MonoBehaviour
             matchesBitter = false;
         }
 
-        if (actualWoody == targetWoody)
+        if (actualWoody >= targetMinWoody && actualWoody <= targetMaxWoody)
         {
             matchesWoody = true;
         }
@@ -145,7 +204,7 @@ public class RequirementCheck : MonoBehaviour
             matchesWoody = false;
         }
 
-        if (actualPeppery == targetPeppery)
+        if (actualPeppery >= targetMinPeppery && actualPeppery <= targetMaxPeppery)
         {
             matchesPeppery = true;
         }
@@ -154,6 +213,32 @@ public class RequirementCheck : MonoBehaviour
             matchesPeppery = false;
         }
 
+        if (actualFloral >= targetMinFloral && actualFloral <= targetMaxFloral)
+        {
+            matchesFloral = true;
+        }
+        else
+        {
+            matchesFloral = false;
+        }
+
+        if (actualEarthy >= targetMinEarthy && actualEarthy <= targetMaxEarthy)
+        {
+            matchesEarthy = true;
+        }
+        else
+        {
+            matchesEarthy = false;
+        }
+
+        if (actualGreen >= targetMinGreen && actualGreen <= targetMaxGreen)
+        {
+            matchesGreen = true;
+        }
+        else
+        {
+            matchesGreen = false;
+        }
 
 
     }

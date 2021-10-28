@@ -12,14 +12,28 @@ public class Contract : ScriptableObject
     public string description;
 
     public float targetVolume;
-    public float targetSweetness;
-    public float targetCitrus;
-    public float targetTart;
-    public float targetSour;
-    public float targetBitter;
-    public float targetWoody;
-    public float targetPeppery;
-    public float targetAge;
-    public float targetAlcohol;
+    public float targetMinSweetness;
+    public float targetMaxSweetness;
+    public float targetMinCitrus;
+    public float targetMaxCitrus;
+    public float targetMinTart;
+    public float targetMaxTart;
+    public float targetMinSour;
+    public float targetMaxSour;
+    public float targetMinBitter;
+    public float targetMaxBitter;
+    public float targetMinWoody;
+    public float targetMaxWoody;
+    public float targetMinPeppery;
+    public float targetMaxPeppery;
+    public float targetMinFloral;
+    public float targetMaxFloral;
+    public float targetMinEarthy;
+    public float targetMaxEarthy;
+    public float targetMinGreen;
+    public float targetMaxGreen;
+    public float targetMinAge;
+    public float targetMinAlcohol;
+    public float targetMaxAlcohol;
 
 }

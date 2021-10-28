@@ -23,6 +23,9 @@ public class VesselManager : MonoBehaviour
     public float bitterAmount;
     public float woodyAmount;
     public float pepperyAmount;
+    public float floralAmount;
+    public float earthyAmount;
+    public float greenAmount;
 
     public float honeyStrength;
     public float sweetnessStrength;
@@ -32,6 +35,9 @@ public class VesselManager : MonoBehaviour
     public float bitterStrength;
     public float woodyStrength;
     public float pepperyStrength;
+    public float floralStrength;
+    public float earthyStrength;
+    public float greenStrength;
 
     [SerializeField] private float honeyAdd;
     [SerializeField] private bool isWater;
@@ -44,6 +50,9 @@ public class VesselManager : MonoBehaviour
     [SerializeField] private float bitterAdd;
     [SerializeField] private float woodyAdd;
     [SerializeField] private float pepperyAdd;
+    [SerializeField] private float floralAdd;
+    [SerializeField] private float earthyAdd;
+    [SerializeField] private float greenAdd;
 
     public string sweetnessRating;
     public string alcoholRating;
@@ -69,6 +78,9 @@ public class VesselManager : MonoBehaviour
     public string bitterProp;
     public string woodyProp;
     public string pepperyProp;
+    public string floralProp;
+    public string earthyProp;
+    public string greenProp;
 
     private AudioSource addIngredientSound;
 
@@ -112,6 +124,9 @@ public class VesselManager : MonoBehaviour
                     bitterAdd = carriedObj.GetComponent<IngredientValues>().bitter;
                     woodyAdd = carriedObj.GetComponent<IngredientValues>().woody;
                     pepperyAdd = carriedObj.GetComponent<IngredientValues>().peppery;
+                    floralAdd = carriedObj.GetComponent<IngredientValues>().floral;
+                    earthyAdd = carriedObj.GetComponent<IngredientValues>().earthy;
+                    greenAdd = carriedObj.GetComponent<IngredientValues>().green;
 
                 //isStarted means fermentation has begun - if it has, the player cannot add ingredients
                 if (!isStarted)
@@ -153,6 +168,21 @@ public class VesselManager : MonoBehaviour
                                 {
                             pepperyProp = " Peppery ";
                                 }
+                        floralAmount += floralAdd;
+                        if (floralAmount > 0)
+                        {
+                            floralProp = " Floral ";
+                        }
+                        earthyAmount += earthyAdd;
+                        if (earthyAmount > 0)
+                        {
+                            earthyProp = " Earthy ";
+                        }
+                        greenAmount += greenAdd;
+                        if (greenAmount > 0)
+                        {
+                            greenProp = " Green ";
+                        }
 
                         totalLiquidContent += ingredientAmount;
 
@@ -177,6 +207,9 @@ public class VesselManager : MonoBehaviour
                         bitterStrength = bitterAmount / totalLiquidContent * 100;
                         woodyStrength = woodyAmount / totalLiquidContent * 100;
                         pepperyStrength = pepperyAmount / totalLiquidContent * 100;
+                        floralStrength = floralAmount / totalLiquidContent * 100;
+                        earthyStrength = earthyAmount / totalLiquidContent * 100;
+                        greenStrength = greenAmount / totalLiquidContent * 100;
 
                         Destroy(carriedObj);
                     }
@@ -270,6 +303,9 @@ public class VesselManager : MonoBehaviour
         bitterAmount = 0;
         woodyAmount = 0;
         pepperyAmount = 0;
+        floralAmount = 0;
+        earthyAmount = 0;
+        greenAmount = 0;
         totalLiquidContent = 0;
         yeastAdd = 0;
         hasYeast = false;
@@ -286,6 +322,9 @@ public class VesselManager : MonoBehaviour
         bitterProp = null;
         woodyProp = null;
         pepperyProp = null;
+        floralProp = null;
+        earthyProp = null;
+        greenProp = null;
         ExpressValues();
         GetComponent<ExamineItem>().uiProperties = properties;
     }
@@ -341,7 +380,7 @@ public class VesselManager : MonoBehaviour
                             {
                                     properties = "Contains: " + totalLiquidContent + "/" + maxLiquidContent + " " + "Honey" + "(" + honeyAmount + "ml" + ") " + "Water" + "(" + waterAmount + "ml" + ") " 
                                     + "Sweetness " + "(" + sweetnessRating + ") " + "Alcohol " + "(" + alcoholRating + ", " + alcohol + "%" + ") "
-                                    + citrusProp + tartProp + sourProp + bitterProp + woodyProp + pepperyProp;
+                                    + citrusProp + tartProp + sourProp + bitterProp + woodyProp + pepperyProp + floralProp + earthyProp + greenProp;
                             }
 
 

@@ -15,6 +15,9 @@ public class StorageManager : MonoBehaviour
     public float bitter;
     public float woody;
     public float peppery;
+    public float floral;
+    public float earthy;
+    public float green;
     public float age;
     public float alcohol;
 
@@ -33,6 +36,9 @@ public class StorageManager : MonoBehaviour
     public string bitterProp;
     public string woodyProp;
     public string pepperyProp;
+    public string floralProp;
+    public string earthyProp;
+    public string greenProp;
 
     public int batchNumber;
 
@@ -63,6 +69,9 @@ public class StorageManager : MonoBehaviour
             bitter = vessel.GetComponent<VesselManager>().bitterStrength;
             woody = vessel.GetComponent<VesselManager>().woodyStrength;
             peppery = vessel.GetComponent<VesselManager>().pepperyStrength;
+            floral = vessel.GetComponent<VesselManager>().floralStrength;
+            earthy = vessel.GetComponent<VesselManager>().earthyStrength;
+            green = vessel.GetComponent<VesselManager>().greenStrength;
 
             citrusProp = vessel.GetComponent<VesselManager>().citrusProp;
             tartProp = vessel.GetComponent<VesselManager>().tartProp;
@@ -70,6 +79,9 @@ public class StorageManager : MonoBehaviour
             bitterProp = vessel.GetComponent<VesselManager>().bitterProp;
             woodyProp = vessel.GetComponent<VesselManager>().woodyProp;
             pepperyProp = vessel.GetComponent<VesselManager>().pepperyProp;
+            floralProp = vessel.GetComponent<VesselManager>().floralProp;
+            earthyProp = vessel.GetComponent<VesselManager>().earthyProp;
+            greenProp = vessel.GetComponent<VesselManager>().greenProp;
 
             sweetnessRating = vessel.GetComponent<VesselManager>().sweetnessRating;
             alcoholRating = vessel.GetComponent<VesselManager>().alcoholRating;
@@ -134,7 +146,7 @@ public class StorageManager : MonoBehaviour
         else
         {
             properties = "Contains: " + "Sweetness " + "(" + sweetnessRating + ") " + "Alcohol " + "(" + alcoholRating + ", " + alcohol + "%" + ") "
-            + "Age: " + age + " " + citrusProp + tartProp + sourProp + bitterProp + woodyProp + pepperyProp;
+            + "Age: " + age + " " + citrusProp + tartProp + sourProp + bitterProp + woodyProp + pepperyProp + floralProp + earthyProp + greenProp;
         }
 
     }

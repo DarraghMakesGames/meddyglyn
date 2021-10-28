@@ -16,6 +16,9 @@ public class ValueCalculator : MonoBehaviour
     [SerializeField] private float bitter;
     [SerializeField] private float woody;
     [SerializeField] private float peppery;
+    [SerializeField] private float floral;
+    [SerializeField] private float earthy;
+    [SerializeField] private float green;
     [SerializeField] private float batchAmount;
 
     [SerializeField] private float sweetValue;
@@ -26,6 +29,9 @@ public class ValueCalculator : MonoBehaviour
     [SerializeField] private float bitterValue;
     [SerializeField] private float woodyValue;
     [SerializeField] private float pepperyValue;
+    [SerializeField] private float floralValue;
+    [SerializeField] private float earthyValue;
+    [SerializeField] private float greenValue;
 
     private bool finished;
 
@@ -45,6 +51,9 @@ public class ValueCalculator : MonoBehaviour
             bitter = GetComponent<VesselManager>().bitterStrength;
             woody = GetComponent<VesselManager>().bitterStrength;
             peppery = GetComponent<VesselManager>().pepperyStrength;
+            floral = GetComponent<VesselManager>().floralStrength;
+            earthy = GetComponent<VesselManager>().earthyStrength;
+            green = GetComponent<VesselManager>().greenStrength;
             batchAmount = GetComponent<VesselManager>().totalLiquidContent;
 
             sweetValue = sweet * 2;
@@ -55,9 +64,12 @@ public class ValueCalculator : MonoBehaviour
             bitterValue = bitter;
             woodyValue = woody;
             pepperyValue = peppery;
+            floralValue = floral;
+            earthyValue = earthy;
+            greenValue = green;
         }
 
-        rawValue = sweetValue + alcoholValue + citrusValue + tartValue + sourValue + bitterValue + woodyValue + pepperyValue;
+        rawValue = sweetValue + alcoholValue + citrusValue + tartValue + sourValue + bitterValue + woodyValue + pepperyValue + floralValue + earthyValue + greenValue;
         valuePerMl = rawValue / batchAmount;
 
 

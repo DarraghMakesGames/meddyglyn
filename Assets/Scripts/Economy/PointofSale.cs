@@ -25,6 +25,9 @@ public class PointofSale : MonoBehaviour
     [SerializeField] float bitter;
     [SerializeField] float woody;
     [SerializeField] float peppery;
+    [SerializeField] float floral;
+    [SerializeField] float earthy;
+    [SerializeField] float green;
     [SerializeField] float age;
     [SerializeField] float alcohol;
 
@@ -64,6 +67,9 @@ public class PointofSale : MonoBehaviour
             bitter = forSale.GetComponent<StorageManager>().bitter;
             woody = forSale.GetComponent<StorageManager>().woody;
             peppery = forSale.GetComponent<StorageManager>().peppery;
+            floral = forSale.GetComponent<StorageManager>().floral;
+            earthy = forSale.GetComponent<StorageManager>().earthy;
+            green = forSale.GetComponent<StorageManager>().green;
 
             CheckValues();
 
@@ -157,6 +163,18 @@ public class PointofSale : MonoBehaviour
                 preferred = peppery;
                 break;
 
+            case "Floral":
+                preferred = floral;
+                break;
+
+            case "Earthy":
+                preferred = earthy;
+                break;
+
+            case "Green":
+                preferred = green;
+                break;
+
             default:
                 Debug.Log("Can't read preferred value");
                 break;
@@ -186,6 +204,18 @@ public class PointofSale : MonoBehaviour
 
             case "Peppery":
                 unpopular = peppery;
+                break;
+
+            case "Floral":
+                unpopular = floral;
+                break;
+
+            case "Earthy":
+                unpopular = earthy;
+                break;
+
+            case "Green":
+                unpopular = green;
                 break;
 
             default:

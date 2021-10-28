@@ -17,7 +17,9 @@ public class IngredientValues : MonoBehaviour
     public float bitter;
     public float woody;
     public float peppery;
-
+    public float floral;
+    public float earthy;
+    public float green;
 
     public float amount;
 

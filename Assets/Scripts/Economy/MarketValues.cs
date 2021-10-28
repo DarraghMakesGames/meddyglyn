@@ -16,6 +16,9 @@ public class MarketValues : MonoBehaviour
     public static float bitterValue;
     public static float woodyValue;
     public static float pepperyValue;
+    public static float floralValue;
+    public static float earthyValue;
+    public static float greenValue;
     private bool marketRandom;
 
     private float preferredFlavour;
@@ -37,6 +40,9 @@ public class MarketValues : MonoBehaviour
         bitterValue = 1f;
         woodyValue = 1f;
         pepperyValue = 1f;
+        floralValue = 1f;
+        earthyValue = 1f;
+        greenValue = 1f;
         preferredFlavour = 2f;
         unpopularFlavour = 0.1f;
         marketRandom = true;
@@ -62,16 +68,19 @@ public class MarketValues : MonoBehaviour
             bitterValue = 1f;
             woodyValue = 1f;
             pepperyValue = 1f;
+            floralValue = 1f;
+            earthyValue = 1f;
+            greenValue = 1f;
 
             //The following randomly selects a flavour as "Preferred" and another as "Unpopular"
 
-            preferredSelector = Random.Range(1, 6);
-            unpopularSelector = Random.Range(1, 6);
+            preferredSelector = Random.Range(1, 9);
+            unpopularSelector = Random.Range(1, 9);
 
                 //This ensures the same flavour is not chosen for both
                 while (unpopularSelector == preferredSelector)
             {
-                unpopularSelector = Random.Range(1, 6);
+                unpopularSelector = Random.Range(1, 9);
             }
 
                 //Preferred flavour assignment
@@ -111,7 +120,25 @@ public class MarketValues : MonoBehaviour
                 Debug.Log("Preferred Flavour: Peppery");
                 preferredFlavourName = "Peppery";
             }
-                else
+                else if (preferredSelector == 7)
+            {
+                floralValue = preferredFlavour;
+                Debug.Log("Preferred Flavour: Floral");
+                preferredFlavourName = "Floral";
+            }
+                else if (preferredSelector == 8)
+            {
+                earthyValue = preferredFlavour;
+                Debug.Log("Preferred Flavour: Earthy");
+                preferredFlavourName = "Earthy";
+            }
+                else if (preferredSelector == 9)
+            {
+                greenValue = preferredFlavour;
+                Debug.Log("Preferred Flavour: Green");
+                preferredFlavourName = "Green";
+            }
+            else
             {
                 Debug.Log("Preferred flavour error");
                 preferredFlavourName = "Null";
@@ -154,6 +181,24 @@ public class MarketValues : MonoBehaviour
                 pepperyValue = unpopularFlavour;
                 Debug.Log("Unpopular Flavour: Peppery");
                 unpopularFlavourName = "Peppery";
+            }
+            else if (unpopularSelector == 7)
+            {
+                floralValue = unpopularFlavour;
+                Debug.Log("Unpopular Flavour: Floral");
+                unpopularFlavourName = "Floral";
+            }
+            else if (unpopularSelector == 8)
+            {
+                earthyValue = unpopularFlavour;
+                Debug.Log("Unpopular Flavour: Earthy");
+                unpopularFlavourName = "Earthy";
+            }
+            else if (unpopularSelector == 9)
+            {
+                greenValue = unpopularFlavour;
+                Debug.Log("Unpopular Flavour: Green");
+                unpopularFlavourName = "Green";
             }
             else
             {

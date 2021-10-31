@@ -54,6 +54,9 @@ MonoBehaviour:
   yeast: 0
   yeastTolerance: 0
   isWater: 0
+  isFruit: 0
+  isSpice: 0
+  isHerb: 1
   honey: 0
   sweetness: 0
   citrus: 0

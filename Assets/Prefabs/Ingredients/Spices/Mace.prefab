@@ -331,6 +331,9 @@ MonoBehaviour:
   yeast: 0
   yeastTolerance: 0
   isWater: 0
+  isFruit: 0
+  isSpice: 1
+  isHerb: 0
   honey: 0
   sweetness: 0
   citrus: 0
@@ -339,6 +342,9 @@ MonoBehaviour:
   bitter: 250
   woody: 250
   peppery: 0
+  floral: 0
+  earthy: 0
+  green: 0
   amount: 100
 --- !u!114 &8159778195918963912
 MonoBehaviour:

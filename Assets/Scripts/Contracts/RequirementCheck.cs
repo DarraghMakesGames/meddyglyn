@@ -85,6 +85,8 @@ public class RequirementCheck : MonoBehaviour
     [SerializeField] private string lackAlcohol;
     [SerializeField] private string overAlcohol;
 
+    public string shortcomingDescription;
+
 
     void Update()
     {
@@ -146,8 +148,10 @@ public class RequirementCheck : MonoBehaviour
             actualAge = 0;
             actualAlcohol = 0;
 }
+        //Each of the following checks compares the brew being presented versus the contract's requirements.
+        // If a requirement is not matched, the script populates the relevant string describing why.
 
-
+        //The following checks the target volume against the volume of the given batch
         if (actualVolume >= targetVolume)
         {
             matchesVolume = true;
@@ -159,6 +163,7 @@ public class RequirementCheck : MonoBehaviour
             lackVolume = " You didn't make enough! ";
         }
 
+        //The following checks the target age against the age of the given batch
         if (actualAge >= targetMinAge)
         {
             matchesAge = true;
@@ -380,6 +385,8 @@ public class RequirementCheck : MonoBehaviour
             overGreen = " The Green flavour is too strong. ";
         }
 
+        //All of the above strings are concatenated as a description of where the brew falls short of the contract
+        shortcomingDescription = lackVolume + lackAge + lackAlcohol + overAlcohol + lackSweetness + overSweetness + lackCitrus + overCitrus + lackTart + overTart + lackSour + overSour + lackBitter + overBitter + lackWoody + overWoody + lackPeppery + overPeppery + lackFloral + overFloral + lackEarthy + overEarthy + lackGreen + overGreen;
 
     }
 }

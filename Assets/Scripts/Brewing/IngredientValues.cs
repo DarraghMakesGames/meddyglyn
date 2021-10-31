@@ -7,6 +7,9 @@ public class IngredientValues : MonoBehaviour
     public int yeast;
     public int yeastTolerance;
     public bool isWater;
+    public bool isFruit;
+    public bool isSpice;
+    public bool isHerb;
 
     public float honey;
 

@@ -17,12 +17,12 @@ MonoBehaviour:
   targetVolume: 5000
   targetMinSweetness: 5
   targetMaxSweetness: 10
-  targetMinCitrus: 0
-  targetMaxCitrus: 100
+  targetMinCitrus: 5
+  targetMaxCitrus: 15
   targetMinTart: 0
   targetMaxTart: 100
   targetMinSour: 0
-  targetMaxSour: 100
+  targetMaxSour: 0
   targetMinBitter: 0
   targetMaxBitter: 100
   targetMinWoody: 0

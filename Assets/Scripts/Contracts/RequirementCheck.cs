@@ -60,6 +60,8 @@ public class RequirementCheck : MonoBehaviour
     public bool matchesAge = false;
     public bool matchesAlcohol = false;
 
+    public bool meetsRequirements;
+
     [SerializeField] private string lackVolume;
     [SerializeField] private string lackSweetness;
     [SerializeField] private string overSweetness;

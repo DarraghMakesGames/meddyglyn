@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contractName: Easy Contract
   description: Create a brew with a strong citrus taste, aged for 2
+  time: 120
+  reward: 250
   targetVolume: 1000
   targetMinSweetness: 0
   targetMaxSweetness: 100

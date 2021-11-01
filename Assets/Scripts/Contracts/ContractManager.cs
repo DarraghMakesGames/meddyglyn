@@ -5,6 +5,8 @@ using UnityEngine;
 public class ContractManager : MonoBehaviour
 {
 
+    public static Contract currentContract;
+
     [SerializeField] private GameObject contractPos1;
     [SerializeField] private GameObject contractPos2;
     [SerializeField] private GameObject contractPos3;

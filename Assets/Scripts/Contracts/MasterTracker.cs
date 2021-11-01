@@ -26,6 +26,11 @@ public class MasterTracker : MonoBehaviour
 
     public bool allRequirementsMet;
 
+    public void GetContract()
+    {
+        contract = ContractManager.currentContract;
+    }
+
     private void Update()
     {
         if (pos1.GetComponent<RequirementCheck>().meetsRequirements)

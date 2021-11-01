@@ -20,4 +20,9 @@ public class ContractPrompt : MonoBehaviour
         reward.GetComponent<UnityEngine.UI.Text>().text = contract.reward.ToString();
     }
 
+    public void SetContract()
+    {
+        ContractManager.currentContract = contract;
+    }
+
 }

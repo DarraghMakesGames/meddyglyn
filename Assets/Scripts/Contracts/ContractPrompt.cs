@@ -11,8 +11,9 @@ public class ContractPrompt : MonoBehaviour
     [SerializeField] private GameObject description;
     [SerializeField] private GameObject time;
     [SerializeField] private GameObject reward;
+    [SerializeField] private GameObject player;
 
-    private void Start()
+    private void OnEnable()
     {
         title.GetComponent<UnityEngine.UI.Text>().text = contract.contractName;
         description.GetComponent<UnityEngine.UI.Text>().text = contract.description;
@@ -23,6 +24,13 @@ public class ContractPrompt : MonoBehaviour
     public void SetContract()
     {
         ContractManager.currentContract = contract;
+    }
+
+    public void Closed()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        contract = null;
     }
 
 }

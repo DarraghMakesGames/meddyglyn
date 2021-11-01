@@ -96,6 +96,7 @@ public class RequirementCheck : MonoBehaviour
 
     void Update()
     {
+    contract = this.transform.GetComponentInParent<MasterTracker>().contract;
 
     targetVolume = contract.targetVolume;
     targetMinSweetness = contract.targetMinSweetness;

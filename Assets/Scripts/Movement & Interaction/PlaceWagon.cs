@@ -6,8 +6,11 @@ public class PlaceWagon : MonoBehaviour
 {
 
     private GameObject CarriedObject;
+    private Transform carriedPos;
     private GameObject carriedObj;
     private Transform carried;
+
+    private Transform pickup;
 
     [SerializeField] Transform pos1;
     [SerializeField] Transform pos2;
@@ -18,15 +21,10 @@ public class PlaceWagon : MonoBehaviour
     [SerializeField] Transform pos7;
     [SerializeField] Transform pos8;
 
-    private Transform placedPosition;
-    private Vector3 placedPos;
-
-    private bool hasItem = false;
-
     private void Start()
     {
         CarriedObject = GameObject.Find("CarriedObject");
-
+        carriedPos = GameObject.Find("CarriedObject").transform;
     }
 
 
@@ -34,9 +32,73 @@ public class PlaceWagon : MonoBehaviour
     {
         if (CarriedObject.transform.childCount < 1)
         {
-            Debug.Log("Not carrying anything");
+            if (pos8.gameObject.transform.childCount > 0)
+            {
+                pickup = pos8.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+            else if (pos7.gameObject.transform.childCount > 0)
+            {
+                pickup = pos7.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+            else if (pos6.gameObject.transform.childCount > 0)
+            {
+                pickup = pos6.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+            else if (pos5.gameObject.transform.childCount > 0)
+            {
+                pickup = pos5.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+            else if (pos4.gameObject.transform.childCount > 0)
+            {
+                pickup = pos4.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+            else if (pos3.gameObject.transform.childCount > 0)
+            {
+                pickup = pos3.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+            else if (pos2.gameObject.transform.childCount > 0)
+            {
+                pickup = pos2.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+            else if (pos1.gameObject.transform.childCount > 0)
+            {
+                pickup = pos1.gameObject.transform.GetChild(0);
+                pickup.position = carriedPos.position;
+                pickup.rotation = Quaternion.identity;
+                pickup.transform.parent = carriedPos;
+                CarriedObject.GetComponent<CarryingManager>().playPlaceSound();
+            }
+
         }
-        else if (!hasItem)
+        else
         {
             carried = CarriedObject.gameObject.transform.GetChild(0);
             carriedObj = carried.transform.gameObject;
@@ -114,13 +176,5 @@ public class PlaceWagon : MonoBehaviour
             }
         }
 
-
-
-
-        else
-        {
-            Debug.Log("No room for this");
-        }
     }
-
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MasterTracker : MonoBehaviour
 {
+    public Contract contract;
 
     [SerializeField] GameObject pos1;
     [SerializeField] GameObject pos2;

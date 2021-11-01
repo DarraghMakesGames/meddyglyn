@@ -89,6 +89,10 @@ public class RequirementCheck : MonoBehaviour
 
     public string shortcomingDescription;
 
+    private void Start()
+    {
+        contract = this.transform.GetComponentInParent<MasterTracker>().contract;
+    }
 
     void Update()
     {

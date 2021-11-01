@@ -10,6 +10,8 @@ public class Contract : ScriptableObject
 
     public string contractName;
     public string description;
+    public float time;
+    public int reward;
 
     public float targetVolume;
     public float targetMinSweetness;

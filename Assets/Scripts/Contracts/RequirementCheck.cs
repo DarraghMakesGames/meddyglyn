@@ -7,6 +7,8 @@ public class RequirementCheck : MonoBehaviour
     public Contract contract;
     private Transform toBeChecked;
 
+    public bool meetsRequirements;
+
     public float targetVolume;
     public float targetMinSweetness;
     public float targetMaxSweetness;
@@ -59,8 +61,6 @@ public class RequirementCheck : MonoBehaviour
     public bool matchesGreen = false;
     public bool matchesAge = false;
     public bool matchesAlcohol = false;
-
-    public bool meetsRequirements;
 
     [SerializeField] private string lackVolume;
     [SerializeField] private string lackSweetness;
@@ -387,8 +387,17 @@ public class RequirementCheck : MonoBehaviour
             overGreen = " The Green flavour is too strong. ";
         }
 
-        //All of the above strings are concatenated as a description of where the brew falls short of the contract
+        //All of the above strings are concatenated as a description of where the brew falls short of the contract (if applicable)
         shortcomingDescription = lackVolume + lackAge + lackAlcohol + overAlcohol + lackSweetness + overSweetness + lackCitrus + overCitrus + lackTart + overTart + lackSour + overSour + lackBitter + overBitter + lackWoody + overWoody + lackPeppery + overPeppery + lackFloral + overFloral + lackEarthy + overEarthy + lackGreen + overGreen;
 
-    }
+        if (matchesSweetness && matchesAge && matchesAlcohol && matchesCitrus && matchesTart && matchesSour && matchesBitter && matchesWoody && matchesPeppery && matchesFloral && matchesEarthy && matchesGreen || this.gameObject.transform.childCount < 1)
+        {
+            meetsRequirements = true;
+        }
+        else 
+        {
+            meetsRequirements = false;
+        }
+
+}
 }

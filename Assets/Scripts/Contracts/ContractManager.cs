@@ -7,6 +7,10 @@ public class ContractManager : MonoBehaviour
 
     public static Contract currentContract;
 
+    public Contract contract1;
+    public Contract contract2;
+    public Contract contract3;
+
     [SerializeField] private GameObject contractPos1;
     [SerializeField] private GameObject contractPos2;
     [SerializeField] private GameObject contractPos3;

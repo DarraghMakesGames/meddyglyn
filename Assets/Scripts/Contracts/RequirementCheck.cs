@@ -94,7 +94,7 @@ public class RequirementCheck : MonoBehaviour
         contract = this.transform.GetComponentInParent<MasterTracker>().contract;
     }
 
-    void Update()
+    public void CheckRequirements()
     {
     contract = this.transform.GetComponentInParent<MasterTracker>().contract;
 

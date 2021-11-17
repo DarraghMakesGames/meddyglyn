@@ -5,6 +5,10 @@ using UnityEngine;
 public class MasterTracker : MonoBehaviour
 {
     public Contract contract;
+    [SerializeField] private GameObject goldCount;
+
+    [SerializeField] private int wagonNumber;
+    [SerializeField] private Contract noContract;
 
     [SerializeField] GameObject pos1;
     [SerializeField] GameObject pos2;
@@ -31,8 +35,18 @@ public class MasterTracker : MonoBehaviour
         contract = ContractManager.currentContract;
     }
 
-    private void Update()
+    public void CheckRequirements()
     {
+        pos1.SendMessage("CheckRequirements");
+        pos2.SendMessage("CheckRequirements");
+        pos3.SendMessage("CheckRequirements");
+        pos4.SendMessage("CheckRequirements");
+        pos5.SendMessage("CheckRequirements");
+        pos6.SendMessage("CheckRequirements");
+        pos7.SendMessage("CheckRequirements");
+        pos8.SendMessage("CheckRequirements");
+
+
         if (pos1.GetComponent<RequirementCheck>().meetsRequirements)
         {
             pos1Matches = true;
@@ -112,6 +126,65 @@ public class MasterTracker : MonoBehaviour
         else
         {
             allRequirementsMet = false;
+        }
+    }
+
+    public void MarkAsComplete()
+    {
+        CheckRequirements();
+
+        if (allRequirementsMet)
+        {
+            goldCount.SendMessage("AddGold", contract.reward);
+        }
+
+        if (wagonNumber == 1)
+        {
+            ContractManager.contract1 = noContract;
+            ContractManager.contract1filled = false;
+        }
+        if (wagonNumber == 2)
+        {
+            ContractManager.contract2 = noContract;
+            ContractManager.contract2filled = false;
+        }
+        if (wagonNumber == 3)
+        {
+            ContractManager.contract3 = noContract;
+            ContractManager.contract3filled = false;
+        }
+
+        if (pos1.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos1.gameObject.transform.GetChild(0).gameObject);
+        }
+        if (pos2.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos2.gameObject.transform.GetChild(0).gameObject);
+        }
+        if (pos3.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos3.gameObject.transform.GetChild(0).gameObject);
+        }
+        if (pos4.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos4.gameObject.transform.GetChild(0).gameObject);
+        }
+        if (pos5.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos5.gameObject.transform.GetChild(0).gameObject);
+        }
+        if (pos6.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos6.gameObject.transform.GetChild(0).gameObject);
+        }
+        if (pos7.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos7.gameObject.transform.GetChild(0).gameObject);
+        }
+        if (pos8.gameObject.transform.childCount > 0)
+        {
+            Destroy(pos8.gameObject.transform.GetChild(0).gameObject);
         }
     }
 

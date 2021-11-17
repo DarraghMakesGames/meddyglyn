@@ -8,13 +8,13 @@ public class ContractFulfilment : MonoBehaviour
 {
 
     [SerializeField] private Contract contract;
-    [SerializeField] private GameObject nameDisplay;
     [SerializeField] private string contractName;
+    [SerializeField] private TMP_Text nameText;
 
     private void Update()
     {
-        contractName = contract.contractName;
-        nameDisplay.GetComponent<TMPro.TextMeshPro>().text = contractName;
+        contract = this.gameObject.transform.GetComponentInParent<MasterTracker>().contract;
+        nameText.text = contract.contractName;
     }
 
 }

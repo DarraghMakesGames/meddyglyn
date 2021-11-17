@@ -20,6 +20,10 @@ public class ContractManager : MonoBehaviour
     [SerializeField] private Contract setContract2;
     [SerializeField] private Contract setContract3;
 
+    [SerializeField] private GameObject wagon1;
+    [SerializeField] private GameObject wagon2;
+    [SerializeField] private GameObject wagon3;
+
     [SerializeField] private GameObject contractPos1;
     [SerializeField] private GameObject contractPos2;
     [SerializeField] private GameObject contractPos3;
@@ -50,6 +54,13 @@ public class ContractManager : MonoBehaviour
         {
             Instantiate(contractSpawn, contractPos3transform.position, contractPos3transform.rotation, contractPos3transform);
         }
+    }
+
+    private void Update()
+    {
+        wagon1.GetComponent<MasterTracker>().contract = contract1;
+        wagon2.GetComponent<MasterTracker>().contract = contract2;
+        wagon3.GetComponent<MasterTracker>().contract = contract3;
     }
 
 }

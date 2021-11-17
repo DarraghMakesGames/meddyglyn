@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ContractPrompt : MonoBehaviour
 {
     public Contract contract;
+    [SerializeField] Contract noContract;
 
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject description;
@@ -23,7 +24,25 @@ public class ContractPrompt : MonoBehaviour
 
     public void SetContract()
     {
-        ContractManager.currentContract = contract;
+        if (ContractManager.contract1filled == false)
+        {
+            ContractManager.contract1 = contract;
+            ContractManager.contract1filled = true;
+        }
+        else if (ContractManager.contract2filled == false)
+        {
+            ContractManager.contract2 = contract;
+            ContractManager.contract2filled = true;
+        }
+        else if (ContractManager.contract3filled == false)
+        {
+            ContractManager.contract3 = contract;
+            ContractManager.contract3filled = true;
+        }
+        else
+        {
+            Debug.Log("Too many contracts accepted");
+        }
     }
 
     public void Closed()

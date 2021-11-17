@@ -81,6 +81,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Toggle Ledger"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4d11a2d-3cf5-426d-9e5b-a234648a84d1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -226,11 +234,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""CheatAddGold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64fa8230-4b69-4922-9772-e413ae55f163"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Ledger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""New control scheme"",
+            ""bindingGroup"": ""New control scheme"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // DefaultPlayer
         m_DefaultPlayer = asset.FindActionMap("DefaultPlayer", throwIfNotFound: true);
@@ -242,6 +278,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_DefaultPlayer_Examine = m_DefaultPlayer.FindAction("Examine", throwIfNotFound: true);
         m_DefaultPlayer_Pause = m_DefaultPlayer.FindAction("Pause", throwIfNotFound: true);
         m_DefaultPlayer_CheatAddGold = m_DefaultPlayer.FindAction("CheatAddGold", throwIfNotFound: true);
+        m_DefaultPlayer_ToggleLedger = m_DefaultPlayer.FindAction("Toggle Ledger", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -299,6 +336,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_DefaultPlayer_Examine;
     private readonly InputAction m_DefaultPlayer_Pause;
     private readonly InputAction m_DefaultPlayer_CheatAddGold;
+    private readonly InputAction m_DefaultPlayer_ToggleLedger;
     public struct DefaultPlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -311,6 +349,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Examine => m_Wrapper.m_DefaultPlayer_Examine;
         public InputAction @Pause => m_Wrapper.m_DefaultPlayer_Pause;
         public InputAction @CheatAddGold => m_Wrapper.m_DefaultPlayer_CheatAddGold;
+        public InputAction @ToggleLedger => m_Wrapper.m_DefaultPlayer_ToggleLedger;
         public InputActionMap Get() { return m_Wrapper.m_DefaultPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -344,6 +383,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @CheatAddGold.started -= m_Wrapper.m_DefaultPlayerActionsCallbackInterface.OnCheatAddGold;
                 @CheatAddGold.performed -= m_Wrapper.m_DefaultPlayerActionsCallbackInterface.OnCheatAddGold;
                 @CheatAddGold.canceled -= m_Wrapper.m_DefaultPlayerActionsCallbackInterface.OnCheatAddGold;
+                @ToggleLedger.started -= m_Wrapper.m_DefaultPlayerActionsCallbackInterface.OnToggleLedger;
+                @ToggleLedger.performed -= m_Wrapper.m_DefaultPlayerActionsCallbackInterface.OnToggleLedger;
+                @ToggleLedger.canceled -= m_Wrapper.m_DefaultPlayerActionsCallbackInterface.OnToggleLedger;
             }
             m_Wrapper.m_DefaultPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -372,10 +414,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @CheatAddGold.started += instance.OnCheatAddGold;
                 @CheatAddGold.performed += instance.OnCheatAddGold;
                 @CheatAddGold.canceled += instance.OnCheatAddGold;
+                @ToggleLedger.started += instance.OnToggleLedger;
+                @ToggleLedger.performed += instance.OnToggleLedger;
+                @ToggleLedger.canceled += instance.OnToggleLedger;
             }
         }
     }
     public DefaultPlayerActions @DefaultPlayer => new DefaultPlayerActions(this);
+    private int m_NewcontrolschemeSchemeIndex = -1;
+    public InputControlScheme NewcontrolschemeScheme
+    {
+        get
+        {
+            if (m_NewcontrolschemeSchemeIndex == -1) m_NewcontrolschemeSchemeIndex = asset.FindControlSchemeIndex("New control scheme");
+            return asset.controlSchemes[m_NewcontrolschemeSchemeIndex];
+        }
+    }
     public interface IDefaultPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -386,5 +440,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnExamine(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnCheatAddGold(InputAction.CallbackContext context);
+        void OnToggleLedger(InputAction.CallbackContext context);
     }
 }

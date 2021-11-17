@@ -7,9 +7,18 @@ public class ContractManager : MonoBehaviour
 
     public static Contract currentContract;
 
-    public static Contract contract1;
-    public static Contract contract2;
-    public static Contract contract3;
+    public static Contract contract1 = null;
+    public static Contract contract2 = null;
+    public static Contract contract3 = null;
+
+    public static bool contract1filled = false;
+    public static bool contract2filled = false;
+    public static bool contract3filled = false;
+
+
+    [SerializeField] private Contract setContract1;
+    [SerializeField] private Contract setContract2;
+    [SerializeField] private Contract setContract3;
 
     [SerializeField] private GameObject contractPos1;
     [SerializeField] private GameObject contractPos2;
@@ -22,6 +31,10 @@ public class ContractManager : MonoBehaviour
 
     private void Start()
     {
+        contract1 = setContract1;
+        contract2 = setContract2;
+        contract3 = setContract3;
+
         contractPos1transform = contractPos1.transform;
         contractPos2transform = contractPos2.transform;
         contractPos3transform = contractPos3.transform;

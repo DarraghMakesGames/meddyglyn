@@ -35,99 +35,99 @@ public class FailureDescriptionGenerator : MonoBehaviour
 
     public void LackVolume()
     {
-        lackVolume = "You didn't make enough!";
+        lackVolume = "You didn't make enough! ";
     }
     public void LackAge()
     {
-        lackAge = "You didn't age it for long enough.";
+        lackAge = "You didn't age it for long enough. ";
     }
     public void LackSweetness()
     {
-        lackSweetness = "It isn't sweet enough.";
+        lackSweetness = "It isn't sweet enough. ";
     }
     public void OverSweetness()
     {
-        overSweetness = "It's too sweet.";
+        overSweetness = "It's too sweet. ";
     }
     public void LackAlcohol()
     {
-        lackAlcohol = "It isn't sweet enough.";
+        lackAlcohol = "The alcohol content is too low. ";
     }
     public void OverAlcohol()
     {
-        overAlcohol = "It's too sweet.";
+        overAlcohol = "The alcohol content is too high. ";
     }
     public void LackCitrus()
     {
-        lackCitrus = "It isn't sweet enough.";
+        lackCitrus = "There isn't enough Citrus flavour. ";
     }
     public void OverCitrus()
     {
-        overCitrus = "It's too sweet.";
+        overCitrus = "There's too much Citrus flavour. ";
     }
     public void LackTart()
     {
-        lackTart = "It isn't sweet enough.";
+        lackTart = "There isn't enough Tart flavour. ";
     }
     public void OverTart()
     {
-        overTart = "It's too sweet.";
+        overTart = "There's too much Tart flavour. ";
     }
     public void LackSour()
     {
-        lackSour = "It isn't sweet enough.";
+        lackSour = "There isn't enough Sour flavour. ";
     }
     public void OverSour()
     {
-        overSour = "It's too sweet.";
+        overSour = "There's too much Sour flavour. ";
     }
     public void LackBitter()
     {
-        lackBitter = "It isn't sweet enough.";
+        lackBitter = "There isn't enough Bitter flavour. ";
     }
     public void OverBitter()
     {
-        overBitter = "It's too sweet.";
+        overBitter = "There's too much Bitter flavour. ";
     }
     public void LackWoody()
     {
-        lackWoody = "It isn't sweet enough.";
+        lackWoody = "There isn't enough Woody flavour. ";
     }
     public void OverWoody()
     {
-        overWoody = "It's too sweet.";
+        overWoody = "There's too much Woody flavour. ";
     }
     public void LackPeppery()
     {
-        lackPeppery = "It isn't sweet enough.";
+        lackPeppery = "There isn't enough Peppery flavour. ";
     }
     public void OverPeppery()
     {
-        overPeppery = "It's too sweet.";
+        overPeppery = "There's too much Peppery flavour. ";
     }
     public void LackFloral()
     {
-        lackFloral = "It isn't sweet enough.";
+        lackFloral = "There isn't enough Floral flavour. ";
     }
     public void OverFloral()
     {
-        overFloral = "It's too sweet.";
+        overFloral = "There's too much Floral flavour. ";
     }
     public void LackEarthy()
     {
-        lackEarthy = "It isn't sweet enough.";
+        lackEarthy = "There isn't enough Earthy flavour. ";
     }
     public void OverEarthy()
     {
-        overEarthy = "It's too sweet.";
+        overEarthy = "There's too much Earthy flavour. ";
     }
     public void LackGreen()
     {
-        lackGreen = "It isn't sweet enough.";
+        lackGreen = "There isn't enough Green flavour. ";
     }
     public void OverGreen()
     {
-        overGreen = "It's too sweet.";
+        overGreen = "There's too much Green flavour. ";
     }
 
     public void ResetDescription()

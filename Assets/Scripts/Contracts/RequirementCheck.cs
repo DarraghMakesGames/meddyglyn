@@ -62,36 +62,12 @@ public class RequirementCheck : MonoBehaviour
     public bool matchesAge = false;
     public bool matchesAlcohol = false;
 
-    [SerializeField] private string lackVolume;
-    [SerializeField] private string lackSweetness;
-    [SerializeField] private string overSweetness;
-    [SerializeField] private string lackCitrus;
-    [SerializeField] private string overCitrus;
-    [SerializeField] private string lackTart;
-    [SerializeField] private string overTart;
-    [SerializeField] private string lackSour;
-    [SerializeField] private string overSour;
-    [SerializeField] private string lackBitter;
-    [SerializeField] private string overBitter;
-    [SerializeField] private string lackWoody;
-    [SerializeField] private string overWoody;
-    [SerializeField] private string lackPeppery;
-    [SerializeField] private string overPeppery;
-    [SerializeField] private string lackFloral;
-    [SerializeField] private string overFloral;
-    [SerializeField] private string lackEarthy;
-    [SerializeField] private string overEarthy;
-    [SerializeField] private string lackGreen;
-    [SerializeField] private string overGreen;
-    [SerializeField] private string lackAge;
-    [SerializeField] private string lackAlcohol;
-    [SerializeField] private string overAlcohol;
-
-    public string shortcomingDescription;
+    private FailureDescriptionGenerator failureGen;
 
     private void Start()
     {
         contract = this.transform.GetComponentInParent<MasterTracker>().contract;
+        failureGen = this.transform.GetComponentInParent<FailureDescriptionGenerator>();
     }
 
     public void CheckRequirements()
@@ -154,245 +130,209 @@ public class RequirementCheck : MonoBehaviour
             actualAge = 0;
             actualAlcohol = 0;
 }
-        //Each of the following checks compares the brew being presented versus the contract's requirements.
-        // If a requirement is not matched, the script populates the relevant string describing why.
+        // Each of the following checks compares the brew being presented versus the contract's requirements.
+        // If a requirement is not matched, it calls on the appropriate method in the FailureDescriptionGenerator script
+        // This generates a human-readable description of where the brew fell short
 
         //The following checks the target volume against the volume of the given batch
         if (actualVolume >= targetVolume)
         {
             matchesVolume = true;
-            lackVolume = null;
+
         }
         else
         {
             matchesVolume = false;
-            lackVolume = " You didn't make enough! ";
+            failureGen.LackVolume();
         }
 
         //The following checks the target age against the age of the given batch
         if (actualAge >= targetMinAge)
         {
             matchesAge = true;
-            lackAge = null;
         }
         else
         {
             matchesAge = false;
-            lackAge = " This wasn't aged for long enough. ";
+            failureGen.LackAge();
         }
 
 
         if (actualSweetness >= targetMinSweetness && actualSweetness <= targetMaxSweetness)
         {
             matchesSweetness = true;
-            lackSweetness = null;
-            overSweetness = null;
         }
         else if (actualSweetness < targetMinSweetness)
         {
             matchesSweetness = false;
-            overSweetness = null;
-            lackSweetness = " It isn't sweet enough. ";
+            failureGen.LackSweetness();
         }
         else if (actualSweetness > targetMaxSweetness)
         {
             matchesSweetness = false;
-            lackSweetness = null;
-            overSweetness = " It's too sweet. ";
+            failureGen.OverSweetness();
         }
 
         if (actualAlcohol >= targetMinAlcohol && actualAlcohol <= targetMaxAlcohol)
         {
             matchesAlcohol = true;
-            lackAlcohol = null;
-            overAlcohol = null;
+
         }
         else if (actualAlcohol < targetMinAlcohol)
         {
             matchesAlcohol = false;
-            lackAlcohol = " The alcohol content isn't high enough. ";
-            overAlcohol = null;
+            failureGen.LackAlcohol();
         }
         else if (actualAlcohol > targetMaxAlcohol)
         {
             matchesAlcohol = false;
-            lackAlcohol = null;
-            overAlcohol = " The alcohol content is unpleasantly high. ";
+            failureGen.OverAlcohol();
         }
 
         if (actualCitrus >= targetMinCitrus && actualCitrus <= targetMaxCitrus)
         {
             matchesCitrus = true;
-            lackCitrus = null;
-            overCitrus = null;
+
         }
         else if (actualCitrus < targetMinCitrus)
         {
             matchesCitrus = false;
-            overCitrus = null;
-            lackCitrus = " There's not enough Citrus flavour. ";
+            failureGen.LackCitrus();
         }
         else if (actualCitrus > targetMaxCitrus)
         {
             matchesCitrus = false;
-            lackCitrus = null;
-            overCitrus = " The Citrus flavour is too strong. ";
+            failureGen.OverCitrus();
         }
 
         if (actualTart >= targetMinTart && actualTart <= targetMaxTart)
         {
             matchesTart = true;
-            lackTart = null;
-            overTart = null;
+
         }
         else if (actualTart < targetMinTart)
         {
             matchesTart = false;
-            overTart = null;
-            lackTart = " There's not enough Tart flavour. ";
+            failureGen.LackTart();
         }
         else if (actualTart > targetMaxTart)
         {
             matchesTart = false;
-            lackTart = null;
-            overTart = " The Tart flavour is too strong. ";
+            failureGen.OverTart();
         }
 
         if (actualSour >= targetMinSour && actualSour <= targetMaxSour)
         {
             matchesSour = true;
-            lackSour = null;
-            overSour = null;
+
         }
         else if (actualSour < targetMinSour)
         {
             matchesSour = false;
-            overSour = null;
-            lackSour = " There's not enough Sour flavour. ";
+            failureGen.LackSour();
         }
         else if (actualSour > targetMaxSour)
         {
             matchesSour = false;
-            lackSour = null;
-            overSour = " The Sour flavour is too strong. ";
+            failureGen.OverSour();
         }
 
         if (actualBitter >= targetMinBitter && actualBitter <= targetMaxBitter)
         {
             matchesBitter = true;
-            lackBitter = null;
-            overBitter = null;
+
         }
         else if (actualBitter < targetMinBitter)
         {
             matchesBitter = false;
-            overBitter = null;
-            lackBitter = " There's not enough Bitter flavour. ";
+            failureGen.LackBitter();
         }
         else if (actualBitter > targetMaxBitter)
         {
             matchesBitter = false;
-            lackBitter = null;
-            overBitter = " The Bitter flavour is too strong. ";
+            failureGen.OverBitter();
         }
 
         if (actualWoody >= targetMinWoody && actualWoody <= targetMaxWoody)
         {
             matchesWoody = true;
-            lackWoody = null;
-            overWoody = null;
+
         }
         else if (actualWoody < targetMinWoody)
         {
             matchesWoody = false;
-            overWoody = null;
-            lackWoody = " There's not enough Woody flavour. ";
+            failureGen.LackWoody();
         }
         else if (actualWoody > targetMaxWoody)
         {
             matchesWoody = false;
-            lackWoody = null;
-            overWoody = " The Woody flavour is too strong. ";
+            failureGen.OverWoody();
         }
 
         if (actualPeppery >= targetMinPeppery && actualPeppery <= targetMaxPeppery)
         {
             matchesPeppery = true;
-            lackPeppery = null;
-            overPeppery = null;
+
         }
         else if (actualPeppery < targetMinPeppery)
         {
             matchesPeppery = false;
-            overPeppery = null;
-            lackPeppery = " There's not enough Peppery flavour. ";
+            failureGen.LackPeppery();
         }
         else if (actualPeppery > targetMaxPeppery)
         {
             matchesPeppery = false;
-            lackPeppery = null;
-            overPeppery = " The Peppery flavour is too strong. ";
+            failureGen.OverPeppery();
         }
 
         if (actualFloral >= targetMinFloral && actualFloral <= targetMaxFloral)
         {
             matchesFloral = true;
-            lackFloral = null;
-            overFloral = null;
+
         }
         else if (actualFloral < targetMinFloral)
         {
             matchesFloral = false;
-            overFloral = null;
-            lackFloral = " There's not enough Floral flavour. ";
+            failureGen.LackFloral();
         }
         else if (actualFloral > targetMaxFloral)
         {
             matchesFloral = false;
-            lackFloral = null;
-            overFloral = " The Floral flavour is too strong. ";
+            failureGen.OverFloral();
         }
 
         if (actualEarthy >= targetMinEarthy && actualEarthy <= targetMaxEarthy)
         {
             matchesEarthy = true;
-            lackEarthy = null;
-            overEarthy = null;
+ 
         }
         else if (actualEarthy < targetMinEarthy)
         {
             matchesEarthy = false;
-            overEarthy = null;
-            lackEarthy = " There's not enough Earthy flavour. ";
+            failureGen.LackEarthy();
         }
         else if (actualEarthy > targetMaxEarthy)
         {
             matchesEarthy = false;
-            lackEarthy = null;
-            overEarthy = " The Earthy flavour is too strong. ";
+            failureGen.OverEarthy();
         }
 
         if (actualGreen >= targetMinGreen && actualGreen <= targetMaxGreen)
         {
             matchesGreen = true;
-            lackGreen = null;
-            overGreen = null;
+            
         }
         else if (actualGreen < targetMinGreen)
         {
             matchesGreen = false;
-            overGreen = null;
-            lackGreen = " There's not enough Green flavour. ";
+            failureGen.LackGreen();
         }
         else if (actualGreen > targetMaxGreen)
         {
             matchesGreen = false;
-            lackGreen = null;
-            overGreen = " The Green flavour is too strong. ";
+            failureGen.OverGreen();
         }
 
-        //All of the above strings are concatenated as a description of where the brew falls short of the contract (if applicable)
-        shortcomingDescription = lackVolume + lackAge + lackAlcohol + overAlcohol + lackSweetness + overSweetness + lackCitrus + overCitrus + lackTart + overTart + lackSour + overSour + lackBitter + overBitter + lackWoody + overWoody + lackPeppery + overPeppery + lackFloral + overFloral + lackEarthy + overEarthy + lackGreen + overGreen;
 
         if (matchesSweetness && matchesAge && matchesAlcohol && matchesCitrus && matchesTart && matchesSour && matchesBitter && matchesWoody && matchesPeppery && matchesFloral && matchesEarthy && matchesGreen || this.gameObject.transform.childCount < 1)
         {

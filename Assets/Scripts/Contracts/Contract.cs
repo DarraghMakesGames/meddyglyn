@@ -13,6 +13,9 @@ public class Contract : ScriptableObject
     public float time;
     public int reward;
 
+    public string failureText;
+    public string passText;
+
     public float targetVolume;
     public float targetMinSweetness;
     public float targetMaxSweetness;

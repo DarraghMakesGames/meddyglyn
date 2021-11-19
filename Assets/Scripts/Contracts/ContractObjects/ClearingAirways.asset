@@ -18,6 +18,10 @@ MonoBehaviour:
     Hopefully it will clear his airways! I only need a 1L bottle.
   time: 120
   reward: 150
+  failureText: Sorry, mate, this isn't what I asked for. This didn't help my grandfather's
+    breathing at all.
+  passText: Brilliant! After drinking this, my grandfather's breathing came so much
+    easier. We'll definitely be back. Thanks so much!
   targetVolume: 1000
   targetMinSweetness: 0
   targetMaxSweetness: 100

@@ -7,7 +7,7 @@ using TMPro;
 public class ContractFulfilment : MonoBehaviour
 {
 
-    [SerializeField] private Contract contract;
+    [SerializeField] public Contract contract;
     [SerializeField] private string contractName;
     [SerializeField] private TMP_Text nameText;
 

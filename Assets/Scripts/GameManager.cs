@@ -44,6 +44,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void UnPause()
+    {
+        Time.timeScale = 1f;
+        gameUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        player.GetComponent<PlayerMovement>().enabled = true;
+    }
+
     public void ToggleContractLedger()
     {
         if (!contractLedger.activeSelf)

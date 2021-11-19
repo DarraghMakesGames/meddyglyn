@@ -10,6 +10,8 @@ public class MasterTracker : MonoBehaviour
     [SerializeField] private int wagonNumber;
     [SerializeField] private Contract noContract;
 
+    [SerializeField] private GameObject player;
+
     [SerializeField] GameObject pos1;
     [SerializeField] GameObject pos2;
     [SerializeField] GameObject pos3;
@@ -131,6 +133,7 @@ public class MasterTracker : MonoBehaviour
 
     public void MarkAsComplete()
     {
+
         CheckRequirements();
 
         if (allRequirementsMet)

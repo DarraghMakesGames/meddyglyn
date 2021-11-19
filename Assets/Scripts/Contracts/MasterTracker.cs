@@ -30,6 +30,8 @@ public class MasterTracker : MonoBehaviour
     [SerializeField] private bool pos7Matches;
     [SerializeField] private bool pos8Matches;
 
+    public string failureDescription;
+
     public bool allRequirementsMet;
 
     public void GetContract()

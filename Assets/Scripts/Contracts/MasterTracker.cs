@@ -31,6 +31,7 @@ public class MasterTracker : MonoBehaviour
     [SerializeField] private bool pos8Matches;
 
     public string failureDescription;
+    [SerializeField] private GameObject failurePopup;
 
     public bool allRequirementsMet;
 
@@ -130,6 +131,14 @@ public class MasterTracker : MonoBehaviour
         else
         {
             allRequirementsMet = false;
+        }
+    }
+
+    public void summaryPopup()
+    {
+        if (allRequirementsMet == false)
+        {
+            failurePopup.SetActive(true);
         }
     }
 

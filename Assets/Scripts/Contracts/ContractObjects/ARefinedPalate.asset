@@ -20,6 +20,10 @@ MonoBehaviour:
     3.
   time: 130
   reward: 300
+  failureText: Lady Worthington finds the brew you have provided to be sub-standard.
+    Her Ladyship has exacting requirements. Should you attempt to provide a brew
+    for her in the future, I suggest you take greater care with your recipe.
+  passText: 
   targetVolume: 3000
   targetMinSweetness: 0
   targetMaxSweetness: 100

@@ -11,10 +11,12 @@ public class FailurePopulate : MonoBehaviour
     [SerializeField] private TMP_Text failureText;
     [SerializeField] private TMP_Text failureSummary;
 
-    private void OnEnable()
+    private void Update()
     {
+        contract = GetComponentInParent<MasterTracker>().contract;
         nameText.text = contract.contractName + ": Failed!";
         failureText.text = contract.failureText;
+        failureSummary.text = GetComponentInParent<FailureDescriptionGenerator>().failureDescription;
     }
 
 }

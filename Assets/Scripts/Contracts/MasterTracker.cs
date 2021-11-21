@@ -32,6 +32,7 @@ public class MasterTracker : MonoBehaviour
 
     public string failureDescription;
     [SerializeField] private GameObject failurePopup;
+    [SerializeField] private GameObject successPopup;
 
     public bool allRequirementsMet;
 
@@ -134,11 +135,15 @@ public class MasterTracker : MonoBehaviour
         }
     }
 
-    public void summaryPopup()
+    public void SummaryPopup()
     {
         if (allRequirementsMet == false)
         {
             failurePopup.SetActive(true);
+        }
+        else
+        {
+            successPopup.SetActive(true);
         }
     }
 

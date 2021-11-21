@@ -9,13 +9,14 @@ public class SuccessPopulate : MonoBehaviour
 
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text successText;
-    [SerializeField] private TMP_Text failureSummary;
+    [SerializeField] private TMP_Text rewardSummary;
 
     private void Update()
     {
         contract = GetComponentInParent<MasterTracker>().contract;
         nameText.text = contract.contractName + ": Success!";
         successText.text = contract.passText;
+        rewardSummary.text = "Reward: " + contract.reward.ToString();
 
     }
 

@@ -12,8 +12,9 @@ public class ReadContract : MonoBehaviour
 
     public void Interacted()
     {
-        contractReadout.GetComponent<ContractPrompt>().contract = contract;
         contractReadout.SetActive(true);
+        contractReadout.GetComponent<ContractPrompt>().contract = contract;
+       
         UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Confined;
         player.GetComponent<PlayerMovement>().enabled = false;

@@ -14,6 +14,7 @@ public class ContractFulfilment : MonoBehaviour
     private void Update()
     {
         contract = this.gameObject.transform.GetComponentInParent<MasterTracker>().contract;
+        GetComponent<ReadContract>().contract = contract;
         nameText.text = contract.contractName;
     }
 

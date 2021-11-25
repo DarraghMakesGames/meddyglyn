@@ -18,6 +18,7 @@ MonoBehaviour:
     Hopefully it will clear his airways! I only need a 1L bottle.
   time: 120
   reward: 150
+  questContract: 0
   failureText: Sorry, mate, this isn't what I asked for. This didn't help my grandfather's
     breathing at all.
   passText: Brilliant! After drinking this, my grandfather's breathing came so much
@@ -27,7 +28,7 @@ MonoBehaviour:
   targetMaxSweetness: 100
   targetMinCitrus: 0
   targetMaxCitrus: 100
-  targetMinTart: 10
+  targetMinTart: 11
   targetMaxTart: 100
   targetMinSour: 0
   targetMaxSour: 100
@@ -35,7 +36,7 @@ MonoBehaviour:
   targetMaxBitter: 100
   targetMinWoody: 0
   targetMaxWoody: 100
-  targetMinPeppery: 10
+  targetMinPeppery: 11
   targetMaxPeppery: 100
   targetMinFloral: 0
   targetMaxFloral: 100

@@ -9,6 +9,8 @@ public class ContractRandomiser : MonoBehaviour
     public Contract[] allContracts;
 
     private bool populate = true;
+    public static bool questActive;
+    [SerializeField] private bool questActiveReadout;
 
     [SerializeField] private GameObject position1;
     [SerializeField] private GameObject position2;
@@ -37,6 +39,7 @@ public class ContractRandomiser : MonoBehaviour
     private void Update()
     {
         nextContractReadout = nextRandomContract;
+        questActiveReadout = questActive;
 
         if (nextRandomContract == null)
         {
@@ -72,21 +75,50 @@ public class ContractRandomiser : MonoBehaviour
     {
         if (position1.GetComponent<ReadContract>().contract == null)
         {
-            position1.GetComponent<ReadContract>().contract = nextRandomContract;
-            StartCoroutine("ClearContract");
-            Debug.Log("Contract populated in position 1");
+            if (questActive == false)
+            {
+                position1.GetComponent<ReadContract>().contract = StoryTracker.nextContract;
+                questActive = true;
+                Debug.Log("Quest Contract populated in position 1");
+            }
+            else
+            {
+                position1.GetComponent<ReadContract>().contract = nextRandomContract;
+                StartCoroutine("ClearContract");
+                Debug.Log("Contract populated in position 1");
+            }
         }
+
         else if (position2.GetComponent<ReadContract>().contract == null)
         {
-            position2.GetComponent<ReadContract>().contract = nextRandomContract;
-            StartCoroutine("ClearContract");
-            Debug.Log("Contract populated in position 2");
+            if (questActive == false)
+            {
+                position2.GetComponent<ReadContract>().contract = StoryTracker.nextContract;
+                questActive = true;
+                Debug.Log("Quest Contract populated in position 1");
+            }
+            else
+            {
+                position2.GetComponent<ReadContract>().contract = nextRandomContract;
+                StartCoroutine("ClearContract");
+                Debug.Log("Contract populated in position 2");
+            }
+
         }
         else if (position3.GetComponent<ReadContract>().contract == null)
         {
-            position3.GetComponent<ReadContract>().contract = nextRandomContract;
-            StartCoroutine("ClearContract");
-            Debug.Log("Contract populated in position 3");
+            if (questActive == false)
+            {
+                position3.GetComponent<ReadContract>().contract = StoryTracker.nextContract;
+                questActive = true;
+                Debug.Log("Quest Contract populated in position 3");
+            }
+            else
+            {
+                position3.GetComponent<ReadContract>().contract = nextRandomContract;
+                StartCoroutine("ClearContract");
+                Debug.Log("Contract populated in position 3");
+            }
         }
         else
         {

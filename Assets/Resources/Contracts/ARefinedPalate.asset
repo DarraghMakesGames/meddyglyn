@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: ARefinedPalate
   m_EditorClassIdentifier: 
   contractName: A Refined Palate
-  description: Lady Worthington requires a subtle and refreshing drink to take of
-    a summer evening. Please provide for her at least 3L (3000ml) of a mead with
-    a Low alcohol content, subtle Citrus flavour, and strong Floral flavour. Her
-    ladyship loathes Earthy flavours, however. It must also be aged for at least
-    3.
+  description: Lady Worthington requires a subtle and refreshing drink to share with
+    guests. Please provide for her at least 3L of a mead with a Low alcohol content,
+    subtle Citrus flavour, and strong Floral flavour. Her ladyship loathes Earthy
+    flavours, however. It must also be aged for at least 3.
   time: 130
   reward: 300
+  questContract: 0
   failureText: Lady Worthington finds the brew you have provided to be sub-standard.
     Her Ladyship has exacting requirements. Should you attempt to provide a brew
     for her in the future, I suggest you take greater care with your recipe.
@@ -28,7 +28,7 @@ MonoBehaviour:
   targetMinSweetness: 0
   targetMaxSweetness: 100
   targetMinCitrus: 1
-  targetMaxCitrus: 6
+  targetMaxCitrus: 5
   targetMinTart: 0
   targetMaxTart: 100
   targetMinSour: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   targetMaxWoody: 100
   targetMinPeppery: 0
   targetMaxPeppery: 100
-  targetMinFloral: 5
+  targetMinFloral: 10
   targetMaxFloral: 100
   targetMinEarthy: 0
   targetMaxEarthy: 0
@@ -47,4 +47,4 @@ MonoBehaviour:
   targetMaxGreen: 100
   targetMinAge: 3
   targetMinAlcohol: 0
-  targetMaxAlcohol: 6
+  targetMaxAlcohol: 5

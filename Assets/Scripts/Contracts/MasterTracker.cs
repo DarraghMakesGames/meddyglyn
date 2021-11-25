@@ -162,6 +162,13 @@ public class MasterTracker : MonoBehaviour
         if (allRequirementsMet && pos1.transform.childCount > 0)
         {
             goldCount.SendMessage("AddGold", contract.reward);
+
+            if (contract.questContract == true)
+            {
+                StoryTracker.questStage++;
+                ContractRandomiser.questActive = false;
+            }
+
         }
 
         if (wagonNumber == 1)

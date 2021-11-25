@@ -12,9 +12,11 @@ public class StoryTracker : MonoBehaviour
     public Contract quest5;
     public Contract quest6;
 
-    public Contract nextContract;
+    public static Contract nextContract;
+    [SerializeField] private Contract nextContractReadout;
 
-    public int questStage = 1;
+    public static int questStage = 1;
+    [SerializeField] private int questStageReadout;
 
     private void Update()
     {
@@ -43,6 +45,9 @@ public class StoryTracker : MonoBehaviour
                 Debug.Log("Quest stage error");
                 break;
         }
+
+        nextContractReadout = nextContract;
+        questStageReadout = questStage;
 
     }
 

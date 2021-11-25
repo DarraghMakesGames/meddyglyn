@@ -139,50 +139,22 @@ public class VesselManager : MonoBehaviour
                         honeyAmount += honeyAdd;
                         sweetnessAmount += sweetnessAdd;
                         citrusAmount += citrusAdd;
-                            if (citrusAmount > 0)
-                                {
-                                    citrusProp = "Citrus ";
-                                }
+
                         tartAmount += tartAdd;
-                            if (tartAmount > 0)
-                                {
-                                    tartProp = " Tart ";
-                                }
+
                         sourAmount += sourAdd;
-                            if (sourAmount > 0)
-                                {
-                                    sourProp = " Sour ";
-                                }
+
                         bitterAmount += bitterAdd;
-                            if (bitterAmount > 0)
-                                {
-                                    bitterProp = " Bitter ";
-                                }
+ 
                         woodyAmount += woodyAdd;
-                            if (woodyAmount > 0)
-                                {
-                                    woodyProp = " Woody ";
-                                }
+
                         pepperyAmount += pepperyAdd;
-                            if (pepperyAmount > 0)
-                                {
-                            pepperyProp = " Peppery ";
-                                }
+
                         floralAmount += floralAdd;
-                        if (floralAmount > 0)
-                        {
-                            floralProp = " Floral ";
-                        }
+
                         earthyAmount += earthyAdd;
-                        if (earthyAmount > 0)
-                        {
-                            earthyProp = " Earthy ";
-                        }
+
                         greenAmount += greenAdd;
-                        if (greenAmount > 0)
-                        {
-                            greenProp = " Green ";
-                        }
 
                         totalLiquidContent += ingredientAmount;
 
@@ -371,8 +343,164 @@ public class VesselManager : MonoBehaviour
                             alcoholRating = "None";
                         }
 
-                        //This sets the properties component of the examine UI based on the contents of the vessel
-                        if (totalLiquidContent == 0)
+        //The following expresses each flavour's strength in human-readable terms
+        //0-5 is low, 6-10 is average, 11+ is high
+
+        if (citrusStrength > 0 && citrusStrength <= 5)
+        {
+            citrusProp = "Citrus(Subtle) ";
+        }
+        else if (citrusStrength > 5 && citrusStrength < 11)
+        {
+            citrusProp = "Citrus(Average) ";
+        }
+        else if (citrusStrength >= 11)
+        {
+            citrusProp = "Citrus(Strong) ";
+        }
+        else if (citrusStrength == 0)
+        {
+            citrusProp = null;
+        }
+
+        if (tartStrength > 0 && tartStrength <= 5)
+        {
+            tartProp = "Tart(Subtle) ";
+        }
+        else if (tartStrength > 5 && tartStrength < 11)
+        {
+            tartProp = "Tart(Average) ";
+        }
+        else if (tartStrength >= 11)
+        {
+            tartProp = "Tart(Strong) ";
+        }
+        else if (tartStrength == 0)
+        {
+            tartProp = null;
+        }
+
+        if (sourStrength > 0 && sourStrength <= 5)
+        {
+            sourProp = "Sour(Subtle) ";
+        }
+        else if (sourStrength > 5 && sourStrength < 11)
+        {
+            sourProp = "Sour(Average) ";
+        }
+        else if (sourStrength >= 11)
+        {
+            sourProp = "Sour(Strong) ";
+        }
+        else if (sourStrength == 0)
+        {
+            sourProp = null;
+        }
+
+        if (woodyStrength > 0 && woodyStrength <= 5)
+        {
+            woodyProp = "Woody(Subtle) ";
+        }
+        else if (woodyStrength > 5 && woodyStrength < 11)
+        {
+            woodyProp = "Woody(Average) ";
+        }
+        else if (woodyStrength >= 11)
+        {
+            woodyProp = "Woody(Strong) ";
+        }
+        else if (woodyStrength == 0)
+        {
+            woodyProp = null;
+        }
+
+        if (pepperyStrength > 0 && pepperyStrength <= 5)
+        {
+            pepperyProp = "Peppery(Subtle) ";
+        }
+        else if (pepperyStrength > 5 && pepperyStrength < 11)
+        {
+            pepperyProp = "Peppery(Average) ";
+        }
+        else if (pepperyStrength >= 11)
+        {
+            pepperyProp = "Peppery(Strong) ";
+        }
+        else if (pepperyStrength == 0)
+        {
+            pepperyProp = null;
+        }
+
+        if (bitterStrength > 0 && bitterStrength <= 5)
+        {
+            bitterProp = "Bitter(Subtle) ";
+        }
+        else if (bitterStrength > 5 && bitterStrength < 11)
+        {
+            bitterProp = "Bitter(Average) ";
+        }
+        else if (bitterStrength >= 11)
+        {
+            bitterProp = "Bitter(Strong) ";
+        }
+        else if (bitterStrength == 0)
+        {
+            bitterProp = null;
+        }
+
+        if (floralStrength > 0 && floralStrength <= 5)
+        {
+            floralProp = "Floral(Subtle) ";
+        }
+        else if (floralStrength > 5 && floralStrength < 11)
+        {
+            floralProp = "Floral(Average) ";
+        }
+        else if (floralStrength >= 11)
+        {
+            floralProp = "Floral(Strong) ";
+        }
+        else if (floralStrength == 0)
+        {
+            floralProp = null;
+        }
+
+        if (earthyStrength > 0 && earthyStrength <= 5)
+        {
+            earthyProp = "Earthy(Subtle) ";
+        }
+        else if (earthyStrength > 5 && earthyStrength < 11)
+        {
+            earthyProp = "Earthy(Average) ";
+        }
+        else if (earthyStrength >= 11)
+        {
+            earthyProp = "Earthy(Strong) ";
+        }
+        else if (earthyStrength == 0)
+        {
+            earthyProp = null;
+        }
+
+        if (greenStrength > 0 && greenStrength <= 5)
+        {
+            greenProp = "Green(Subtle) ";
+        }
+        else if (greenStrength > 5 && greenStrength < 11)
+        {
+            greenProp = "Green(Average) ";
+        }
+        else if (greenStrength >= 11)
+        {
+            greenProp = "Green(Strong) ";
+        }
+        else if (greenStrength == 0)
+        {
+            greenProp = null;
+        }
+
+        //This sets the properties component of the examine UI based on the contents of the vessel
+        if (totalLiquidContent == 0)
                             {
                                 properties = "Contains: Empty";
                             }

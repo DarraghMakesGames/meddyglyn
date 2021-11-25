@@ -137,7 +137,7 @@ public class MasterTracker : MonoBehaviour
 
     public void SummaryPopup()
     {
-        if (allRequirementsMet == false)
+        if (allRequirementsMet == false || pos1.transform.childCount < 1)
         {
             failurePopup.SetActive(true);
         }
@@ -152,7 +152,7 @@ public class MasterTracker : MonoBehaviour
 
         CheckRequirements();
 
-        if (allRequirementsMet)
+        if (allRequirementsMet && pos1.transform.childCount > 0)
         {
             goldCount.SendMessage("AddGold", contract.reward);
         }

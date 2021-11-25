@@ -15,7 +15,6 @@ public class ContractManager : MonoBehaviour
     public static bool contract2filled = false;
     public static bool contract3filled = false;
 
-
     [SerializeField] private Contract setContract1;
     [SerializeField] private Contract setContract2;
     [SerializeField] private Contract setContract3;
@@ -27,6 +26,7 @@ public class ContractManager : MonoBehaviour
     [SerializeField] private GameObject contractPos1;
     [SerializeField] private GameObject contractPos2;
     [SerializeField] private GameObject contractPos3;
+
     private Transform contractPos1transform;
     private Transform contractPos2transform;
     private Transform contractPos3transform;

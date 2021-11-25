@@ -18,6 +18,8 @@ MonoBehaviour:
     (20,000ml) of mead with a High alcohol content.
   time: 180
   reward: 250
+  failureText: 
+  passText: 
   targetVolume: 20000
   targetMinSweetness: 0
   targetMaxSweetness: 100
@@ -39,6 +41,6 @@ MonoBehaviour:
   targetMaxEarthy: 100
   targetMinGreen: 0
   targetMaxGreen: 0
-  targetMinAge: 100
+  targetMinAge: 0
   targetMinAlcohol: 10
   targetMaxAlcohol: 100

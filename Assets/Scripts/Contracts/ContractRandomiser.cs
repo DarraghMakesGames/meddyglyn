@@ -40,4 +40,10 @@ public class ContractRandomiser : MonoBehaviour
         nextRandomContract = contractList[Random.Range(0, contractList.Count)];
         contractList.Remove(nextRandomContract);
     }
+
+    public void ReturnContract(Contract contract)
+    {
+        contractList.Add(contract);
+    }
+
 }

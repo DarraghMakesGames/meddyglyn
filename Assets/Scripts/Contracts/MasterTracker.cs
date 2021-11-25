@@ -10,6 +10,8 @@ public class MasterTracker : MonoBehaviour
     [SerializeField] private int wagonNumber;
     [SerializeField] private Contract noContract;
 
+    [SerializeField] private GameObject contractManager;
+
     [SerializeField] private GameObject player;
 
     [SerializeField] GameObject pos1;
@@ -35,6 +37,11 @@ public class MasterTracker : MonoBehaviour
     [SerializeField] private GameObject successPopup;
 
     public bool allRequirementsMet;
+
+    private void Start()
+    {
+        contractManager = GameObject.Find("ContractManager");
+    }
 
     public void GetContract()
     {
@@ -149,7 +156,7 @@ public class MasterTracker : MonoBehaviour
 
     public void MarkAsComplete()
     {
-
+        contractManager.SendMessage("ReturnContract", contract);
         CheckRequirements();
 
         if (allRequirementsMet && pos1.transform.childCount > 0)

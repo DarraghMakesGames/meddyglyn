@@ -12,33 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
   m_Name: ExoticMemories
   m_EditorClassIdentifier: 
-  contractName: 
-  description: 
+  contractName: Exotic Memories
+  description: Dearest brewer - my name is Elias. I fear I am nearing my life's end.
+    Many years ago I drank of a mead that was truly exotic. It had a strong Floral
+    flavour, an average Peppery flavour, and a subtle Citrus flavour. I remember
+    thinking it was not Tart at all. It also had a very strong kick to it - it must
+    have been high in Alcohol. I was hoping you could recreate this drink for an
+    old man on his last legs. I would like 5L, so I may share it with my family.
   time: 0
-  reward: 0
-  failureText: 
-  passText: 
-  targetVolume: 0
+  reward: 300
+  failureText: Ah. Oh dear. This isn't quite how I remember it. What a shame.
+  passText: Brewer, you have brought me such joy. This brings me back to the days
+    of my youth. Thank you. A thousand times, thank you.
+  targetVolume: 5000
   targetMinSweetness: 0
-  targetMaxSweetness: 0
-  targetMinCitrus: 0
-  targetMaxCitrus: 0
+  targetMaxSweetness: 100
+  targetMinCitrus: 1
+  targetMaxCitrus: 6
   targetMinTart: 0
-  targetMaxTart: 0
+  targetMaxTart: 1
   targetMinSour: 0
   targetMaxSour: 0
   targetMinBitter: 0
   targetMaxBitter: 0
   targetMinWoody: 0
   targetMaxWoody: 0
-  targetMinPeppery: 0
-  targetMaxPeppery: 0
-  targetMinFloral: 0
-  targetMaxFloral: 0
+  targetMinPeppery: 5
+  targetMaxPeppery: 10
+  targetMinFloral: 10
+  targetMaxFloral: 100
   targetMinEarthy: 0
   targetMaxEarthy: 0
   targetMinGreen: 0
   targetMaxGreen: 0
   targetMinAge: 0
-  targetMinAlcohol: 0
-  targetMaxAlcohol: 0
+  targetMinAlcohol: 11
+  targetMaxAlcohol: 100

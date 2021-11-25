@@ -31,6 +31,11 @@ public class ReadContract : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = false;
     }
 
+    public void ClearContract()
+    {
+        contract = null;
+    }
+
     private void Update()
     {
         if (contract == null && getRandom == true)

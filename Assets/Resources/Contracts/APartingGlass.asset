@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
+  m_Name: New Contract
+  m_EditorClassIdentifier: 
+  contractName: 
+  description: 
+  time: 0
+  reward: 0
+  failureText: 
+  passText: 
+  targetVolume: 0
+  targetMinSweetness: 0
+  targetMaxSweetness: 0
+  targetMinCitrus: 0
+  targetMaxCitrus: 0
+  targetMinTart: 0
+  targetMaxTart: 0
+  targetMinSour: 0
+  targetMaxSour: 0
+  targetMinBitter: 0
+  targetMaxBitter: 0
+  targetMinWoody: 0
+  targetMaxWoody: 0
+  targetMinPeppery: 0
+  targetMaxPeppery: 0
+  targetMinFloral: 0
+  targetMaxFloral: 0
+  targetMinEarthy: 0
+  targetMaxEarthy: 0
+  targetMinGreen: 0
+  targetMaxGreen: 0
+  targetMinAge: 0
+  targetMinAlcohol: 0
+  targetMaxAlcohol: 0

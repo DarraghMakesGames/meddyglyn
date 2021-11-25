@@ -98,9 +98,9 @@ public class ContractRandomiser : MonoBehaviour
     {
         while (populate)
         {
-            PopulateBoard();
             yield return new WaitForSeconds(10);
             Debug.Log("Triggering a new populate check");
+            PopulateBoard();
         }
         
     }

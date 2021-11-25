@@ -10,24 +10,6 @@ public class ReadContract : MonoBehaviour
     [SerializeField] private GameObject contractReadout;
     [SerializeField] private GameObject UI;
 
-    [SerializeField] private GameObject contractManager;
-
-    [SerializeField] private bool getRandom = true;
-
-    IEnumerator GetNewContract()
-    {
-                int wait = Random.Range(5, 15);
-                yield return new WaitForSeconds(wait);
-                contract = ContractRandomiser.nextRandomContract;
-                getRandom = true;
-                contractManager.SendMessage("ContractTaken");
-    }
-
-    private void Start()
-    {
-        contractManager = GameObject.Find("ContractManager");
-    }
-
     public void Interacted()
     {
         contractReadout.GetComponent<ContractPrompt>().contract = contract;

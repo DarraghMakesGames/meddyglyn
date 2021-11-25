@@ -165,6 +165,7 @@ public class MasterTracker : MonoBehaviour
 
             if (contract.questContract == true)
             {
+                contractManager.SendMessage(contract.questReward);
                 StoryTracker.questStage++;
                 ContractRandomiser.questActive = false;
             }

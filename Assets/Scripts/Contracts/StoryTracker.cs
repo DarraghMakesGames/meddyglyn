@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StoryTracker : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class StoryTracker : MonoBehaviour
     public Contract quest4;
     public Contract quest5;
     public Contract quest6;
+
+    [SerializeField] private UnityEvent Tutorial;
+    [SerializeField] private UnityEvent Spice;
 
     public static Contract nextContract;
     [SerializeField] private Contract nextContractReadout;
@@ -49,6 +53,16 @@ public class StoryTracker : MonoBehaviour
         nextContractReadout = nextContract;
         questStageReadout = questStage;
 
+    }
+
+    public void TutorialCompleted()
+    {
+        Tutorial.Invoke();
+    }
+
+    public void SpiceMerchant()
+    {
+        Spice.Invoke();
     }
 
 }

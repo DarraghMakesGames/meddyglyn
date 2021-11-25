@@ -20,7 +20,7 @@ MonoBehaviour:
   time: 0
   reward: 225
   questContract: 1
-  questReward: 
+  questReward: SpiceMerchant
   failureText: 'Ah. Thank you for making the effort, but this really isn''t going
     to work. '
   passText: Wow, this is fantastic. I'm certain this is going to take our next get-together

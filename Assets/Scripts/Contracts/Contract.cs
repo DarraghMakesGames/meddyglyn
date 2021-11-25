@@ -13,6 +13,7 @@ public class Contract : ScriptableObject
     public float time;
     public int reward;
     public bool questContract;
+    public string questReward;
 
     public string failureText;
     public string passText;

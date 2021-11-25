@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
+  m_Name: TastesofSummer
+  m_EditorClassIdentifier: 
+  contractName: Tastes of Summer
+  description: Hi there! I have a craving for a zesty summer brew. Could you make
+    me a 1L bottle of mead, with an Average alcohol content, high Sweetness, and
+    any amount of Citrus, Tart, Sour and Peppery flavours?
+  time: 0
+  reward: 125
+  failureText: This isn't quite what I was imagining. It's less Summery, more Bummery.
+  passText: Brilliant! Drinking this makes me feel like I'm laying on golden sands
+    somewhere.
+  targetVolume: 1000
+  targetMinSweetness: 9
+  targetMaxSweetness: 100
+  targetMinCitrus: 1
+  targetMaxCitrus: 100
+  targetMinTart: 1
+  targetMaxTart: 100
+  targetMinSour: 1
+  targetMaxSour: 100
+  targetMinBitter: 0
+  targetMaxBitter: 0
+  targetMinWoody: 0
+  targetMaxWoody: 0
+  targetMinPeppery: 1
+  targetMaxPeppery: 100
+  targetMinFloral: 0
+  targetMaxFloral: 0
+  targetMinEarthy: 0
+  targetMaxEarthy: 0
+  targetMinGreen: 0
+  targetMaxGreen: 0
+  targetMinAge: 0
+  targetMinAlcohol: 5
+  targetMaxAlcohol: 10

@@ -16,7 +16,7 @@ public class ReadContract : MonoBehaviour
 
     IEnumerator GetNewContract()
     {
-                int wait = Random.Range(20, 80);
+                int wait = Random.Range(5, 15);
                 yield return new WaitForSeconds(wait);
                 contract = ContractRandomiser.nextRandomContract;
                 getRandom = true;
@@ -31,6 +31,7 @@ public class ReadContract : MonoBehaviour
     public void Interacted()
     {
         contractReadout.GetComponent<ContractPrompt>().contract = contract;
+        contractReadout.GetComponent<ContractPrompt>().contractOfferPosition = this.gameObject;
         contractReadout.SetActive(true);
         UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Confined;
@@ -40,15 +41,6 @@ public class ReadContract : MonoBehaviour
     public void ClearContract()
     {
         contract = null;
-    }
-
-    private void Update()
-    {
-        if (contract == null && getRandom == true)
-        {
-            getRandom = false;
-            StartCoroutine("GetNewContract");
-        }
     }
 
 }

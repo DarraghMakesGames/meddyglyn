@@ -8,6 +8,13 @@ public class ContractRandomiser : MonoBehaviour
     public List<Contract> contractList;
     public Contract[] allContracts;
 
+    private bool populate = true;
+
+    [SerializeField] private GameObject position1;
+    [SerializeField] private GameObject position2;
+    [SerializeField] private GameObject position3;
+
+
     [SerializeField] private Contract nextContractReadout;
 
     public static Contract nextRandomContract;
@@ -21,7 +28,9 @@ public class ContractRandomiser : MonoBehaviour
             Debug.Log("prefab found: " + c.name);
             contractList.Add(c);
 
-        }    
+        }
+
+        StartCoroutine("TriggerPopulate");
 
     }
 
@@ -55,7 +64,45 @@ public class ContractRandomiser : MonoBehaviour
     private IEnumerator ClearContract()
     {
         yield return new WaitForSeconds(1);
-        nextRandomContract = null;
+        Debug.Log(nextRandomContract.contractName + " cleared!");
+        nextRandomContract = null; 
+    }
+
+    private void PopulateBoard()
+    {
+        if (position1.GetComponent<ReadContract>().contract == null)
+        {
+            position1.GetComponent<ReadContract>().contract = nextRandomContract;
+            StartCoroutine("ClearContract");
+            Debug.Log("Contract populated in position 1");
+        }
+        else if (position2.GetComponent<ReadContract>().contract == null)
+        {
+            position2.GetComponent<ReadContract>().contract = nextRandomContract;
+            StartCoroutine("ClearContract");
+            Debug.Log("Contract populated in position 2");
+        }
+        else if (position3.GetComponent<ReadContract>().contract == null)
+        {
+            position3.GetComponent<ReadContract>().contract = nextRandomContract;
+            StartCoroutine("ClearContract");
+            Debug.Log("Contract populated in position 3");
+        }
+        else
+        {
+            Debug.Log("Board already full!");
+        }
+    }
+
+    private IEnumerator TriggerPopulate()
+    {
+        while (populate)
+        {
+            PopulateBoard();
+            yield return new WaitForSeconds(10);
+            Debug.Log("Triggering a new populate check");
+        }
+        
     }
 
 }

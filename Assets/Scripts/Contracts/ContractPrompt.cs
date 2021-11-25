@@ -14,6 +14,8 @@ public class ContractPrompt : MonoBehaviour
     [SerializeField] private GameObject reward;
     [SerializeField] private GameObject player;
 
+    public GameObject contractOfferPosition;
+
     private void OnEnable()
     {
         title.GetComponent<UnityEngine.UI.Text>().text = contract.contractName;
@@ -45,11 +47,17 @@ public class ContractPrompt : MonoBehaviour
         }
     }
 
+    public void ClearContract()
+    {
+        contractOfferPosition.GetComponent<ReadContract>().contract = null;
+    }
+
     public void Closed()
     {
         Cursor.lockState = CursorLockMode.Locked;
         player.GetComponent<PlayerMovement>().enabled = true;
         contract = null;
+        contractOfferPosition = null;
     }
 
 }

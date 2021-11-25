@@ -39,11 +39,23 @@ public class ContractRandomiser : MonoBehaviour
     {
         nextRandomContract = contractList[Random.Range(0, contractList.Count)];
         contractList.Remove(nextRandomContract);
+        Debug.Log("New contract queued!");
     }
 
     public void ReturnContract(Contract contract)
     {
         contractList.Add(contract);
+    }
+
+    public void ContractTaken()
+    {
+        StartCoroutine("ClearContract");
+    }
+
+    private IEnumerator ClearContract()
+    {
+        yield return new WaitForSeconds(1);
+        nextRandomContract = null;
     }
 
 }

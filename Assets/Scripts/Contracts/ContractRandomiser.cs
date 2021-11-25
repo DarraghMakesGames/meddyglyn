@@ -8,7 +8,9 @@ public class ContractRandomiser : MonoBehaviour
     public List<Contract> contractList;
     public Contract[] allContracts;
 
-    public Contract nextRandomContract;
+    [SerializeField] private Contract nextContractReadout;
+
+    public static Contract nextRandomContract;
 
     void Start()
     {
@@ -19,12 +21,20 @@ public class ContractRandomiser : MonoBehaviour
             Debug.Log("prefab found: " + c.name);
             contractList.Add(c);
 
+        }    
+
+    }
+
+    private void Update()
+    {
+        nextContractReadout = nextRandomContract;
+
+        if (nextRandomContract == null)
+        {
+            RandomiseContract();
         }
+    }
 
-        RandomiseContract();
-
-    }  
-    
     public void RandomiseContract()
     {
         nextRandomContract = contractList[Random.Range(0, contractList.Count)];

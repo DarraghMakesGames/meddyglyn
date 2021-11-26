@@ -13,7 +13,8 @@ public class VesselManager : MonoBehaviour
 
     [SerializeField] private GameObject cork;
     [SerializeField] private GameObject liquidLevel;
-    
+    [SerializeField] private GameObject foam;
+
     public float honeyAmount;
     public float waterAmount;
     public float sweetnessAmount;
@@ -240,6 +241,7 @@ public class VesselManager : MonoBehaviour
             StartCoroutine("Fermentation");
             isStarted = true;
             cork.SetActive(true);
+            foam.SetActive(true);
         }
     }
 
@@ -254,6 +256,7 @@ public class VesselManager : MonoBehaviour
                 if (alcohol == yeastTolerance)
             {
                 isFinished = true;
+                foam.SetActive(false);
                 GameManager.batchesMade += 1;
                 batchNumber = GameManager.batchNumber;
                 GameManager.batchNumber += 1;
@@ -284,6 +287,7 @@ public class VesselManager : MonoBehaviour
         isStarted = false;
         isFinished = false;
         cork.SetActive(false);
+        foam.SetActive(false);
         alcohol = 0;
         yeastTolerance = 0;
         ingredientAmount = 0;

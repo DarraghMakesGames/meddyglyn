@@ -16,10 +16,11 @@ MonoBehaviour:
   description: Congratulations, mead-maker! You are embarking on a brewing adventure
     steeped in history. To get started, let's make a basic mead. Add some honey and
     yeast to the brewing vessel, then finish it off with some water. When it's finished
-    fermenting, put it in the wagon downstairs and mark it as complete.
+    fermenting, bottle it, put it in the wagon downstairs and mark it as complete.
   time: 0
   reward: 75
   questContract: 1
+  questReward: TutorialCompleted
   failureText: 
   passText: Congratulations! You've brewed your first batch of mead. New contracts
     have been unlocked. Don't forget you can sell any mead left over at the sales

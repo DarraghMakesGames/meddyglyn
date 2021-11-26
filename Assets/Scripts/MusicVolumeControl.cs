@@ -18,4 +18,9 @@ public class MusicVolumeControl : MonoBehaviour
         music.volume = musicVolume;
     }
 
+    public void SetVolume(float volume)
+    {
+        musicVolume = volume;
+    }
+
 }

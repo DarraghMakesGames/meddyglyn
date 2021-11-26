@@ -13,6 +13,8 @@ public class StoryTracker : MonoBehaviour
     public Contract quest5;
     public Contract quest6;
 
+    [SerializeField] private ContractRandomiser randomiser;
+
     [SerializeField] private UnityEvent Tutorial;
     [SerializeField] private UnityEvent Spice;
 
@@ -21,6 +23,11 @@ public class StoryTracker : MonoBehaviour
 
     public static int questStage = 1;
     [SerializeField] private int questStageReadout;
+
+    private void Start()
+    {
+        randomiser = GetComponent<ContractRandomiser>();
+    }
 
     private void Update()
     {
@@ -58,6 +65,8 @@ public class StoryTracker : MonoBehaviour
     public void TutorialCompleted()
     {
         Tutorial.Invoke();
+        randomiser.populate = true;
+        randomiser.StartCoroutine("TriggerPopulate");
     }
 
     public void SpiceMerchant()

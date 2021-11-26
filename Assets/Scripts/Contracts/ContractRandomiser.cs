@@ -8,7 +8,7 @@ public class ContractRandomiser : MonoBehaviour
     public List<Contract> contractList;
     public Contract[] allContracts;
 
-    private bool populate = true;
+    public bool populate = false;
     public static bool questActive;
     [SerializeField] private bool questActiveReadout;
 
@@ -41,7 +41,7 @@ public class ContractRandomiser : MonoBehaviour
         nextContractReadout = nextRandomContract;
         questActiveReadout = questActive;
 
-        if (nextRandomContract == null)
+        if (nextRandomContract == null && populate)
         {
             RandomiseContract();
         }

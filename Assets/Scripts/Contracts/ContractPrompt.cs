@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ContractPrompt : MonoBehaviour
 {
@@ -9,19 +10,23 @@ public class ContractPrompt : MonoBehaviour
     [SerializeField] Contract noContract;
 
     [SerializeField] private GameObject title;
+    [SerializeField] private TMP_Text titleText;
     [SerializeField] private GameObject description;
-    [SerializeField] private GameObject time;
+    [SerializeField] private TMP_Text descriptionText;
     [SerializeField] private GameObject reward;
+    [SerializeField] private TMP_Text rewardText;
     [SerializeField] private GameObject player;
 
     public GameObject contractOfferPosition;
 
     private void OnEnable()
     {
-        title.GetComponent<UnityEngine.UI.Text>().text = contract.contractName;
-        description.GetComponent<UnityEngine.UI.Text>().text = contract.description;
-        time.GetComponent<UnityEngine.UI.Text>().text = contract.time.ToString();
-        reward.GetComponent<UnityEngine.UI.Text>().text = contract.reward.ToString();
+
+        titleText.text = contract.contractName;
+
+        descriptionText.text = contract.description;
+
+        rewardText.text = contract.reward.ToString() + "gp";
     }
 
     public void SetContract()

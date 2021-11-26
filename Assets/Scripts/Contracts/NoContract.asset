@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
   m_Name: NoContract
   m_EditorClassIdentifier: 
-  contractName: No Contract Accepted
+  contractName: 
   description: When you accept a contract, here you will be able to read what requirements
     your client has asked you to fulfil. This may include particular flavours you
     must include (or not include!), how long the brew must be aged for, a minimum
@@ -20,6 +20,10 @@ MonoBehaviour:
     the Contracts Board.
   time: 0
   reward: 0
+  questContract: 0
+  questReward: 
+  failureText: 
+  passText: 
   targetVolume: 0
   targetMinSweetness: 0
   targetMaxSweetness: 0

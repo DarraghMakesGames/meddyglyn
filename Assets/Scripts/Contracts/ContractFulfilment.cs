@@ -15,7 +15,15 @@ public class ContractFulfilment : MonoBehaviour
     {
         contract = this.gameObject.transform.GetComponentInParent<MasterTracker>().contract;
         GetComponent<ReadContract>().contract = contract;
-        //nameText.text = contract.contractName;
+        if (contract != null)
+        {
+            nameText.text = contract.contractName;
+        }
+        else
+        {
+            nameText.text = null;
+        }
+        
     }
 
 }

@@ -9,7 +9,7 @@ public class ContractRandomiser : MonoBehaviour
     public Contract[] allContracts;
 
     public bool populate = false;
-    public static bool questActive;
+    public static bool questActive = true;
     [SerializeField] private bool questActiveReadout;
 
     [SerializeField] private GameObject position1;

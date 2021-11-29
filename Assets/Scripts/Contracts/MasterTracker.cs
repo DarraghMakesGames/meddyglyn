@@ -156,7 +156,11 @@ public class MasterTracker : MonoBehaviour
 
     public void MarkAsComplete()
     {
-        contractManager.SendMessage("ReturnContract", contract);
+        if (contract.questContract == false)
+        {
+            contractManager.SendMessage("ReturnContract", contract);
+        }
+            
         CheckRequirements();
 
         if (allRequirementsMet && pos1.transform.childCount > 0)

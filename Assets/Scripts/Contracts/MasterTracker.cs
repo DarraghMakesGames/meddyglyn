@@ -171,6 +171,10 @@ public class MasterTracker : MonoBehaviour
             }
 
         }
+        else if (allRequirementsMet == false && contract.questContract == true)
+        {
+            ContractRandomiser.questActive = false;
+        }
 
         if (wagonNumber == 1)
         {

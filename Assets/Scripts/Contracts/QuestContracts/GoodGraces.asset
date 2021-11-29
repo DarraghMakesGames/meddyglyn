@@ -17,10 +17,12 @@ MonoBehaviour:
     Grace the Duke has requested that you, as a new business owner in his city, prepare
     a sample of your work. He has requested a brew with an Average Alcohol content
     (6-10%), and a strong Tart flavour. Her Grace the Duchess has a strong dislike
-    for Sour tastes. Please do not include ingredients with that flavour. I look
-    forward to a speedy fulfilment of this request. '
+    for Sour tastes. Please do not include ingredients with that flavour. We require
+    that you present at least 3L of this brew. I look forward to a speedy fulfilment
+    of this request. '
   time: 0
   reward: 100
+  rewardText: ', Kegs unlocked (beside bottles), Duke''s Stein trophy added'
   questContract: 1
   questReward: InGoodGraces
   failureText: "This is truly disappointing. His Grace requires business owners in
@@ -36,7 +38,7 @@ MonoBehaviour:
     5L kegs available to you. This should make it easier to store and sell larger
     batches. His Grace also asked me to include a tankard from the royal kitchen
     as a sign of his thanks."
-  targetVolume: 5000
+  targetVolume: 3000
   targetMinSweetness: 0
   targetMaxSweetness: 100
   targetMinCitrus: 0

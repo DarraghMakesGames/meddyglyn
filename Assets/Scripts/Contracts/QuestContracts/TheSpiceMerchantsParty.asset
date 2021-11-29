@@ -12,21 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
   m_Name: TheSpiceMerchantsParty
   m_EditorClassIdentifier: 
-  contractName: The Spice Merchant's Party
-  description: "Greetings! I heard you're the new brewer in town. I occasionally
-    hold a soir\xE9e with some of the other local traders, and I'd like to spice
-    it up (pardon the pun) with some mead. Could you make me 8L of High Alcohol brew,
-    with a strong Citrus flavour and a subtle Sour flavour. Thanks in advance!"
+  contractName: "The Spice Merchant's Soir\xE9e"
+  description: "Hello there, brewer! I am certain you have heard of me \u2013 I am
+    Kiera, preeminent spice merchant of Matzig! My friendship is valuable in this
+    city, brewer, and you would do well to court it. As you may know, war has recently
+    been declared on the duchy by our closest neighbour, Reizvald. Understandably,
+    this has put many of the city\u2019s movers and shakers on edge. I am throwing
+    a bit of a get-together to calm nerves. Would you be so kind as to brew some
+    mead I can have served? I would like at least 6L of brew, with High Alcohol (11%+),
+    a Strong Citrus flavour, and a subtle Sour flavour. I\u2019ll need that aged
+    for at least 2 as well. Thank you in advance!"
   time: 0
-  reward: 225
+  reward: 125
+  rewardText: ', Spices ingredients unlocked, Spice Merchant''s Mortar trophy added,
+    New Contracts Available'
   questContract: 1
   questReward: SpiceMerchant
-  failureText: 'Ah. Thank you for making the effort, but this really isn''t going
-    to work. '
-  passText: Wow, this is fantastic. I'm certain this is going to take our next get-together
-    to the next level. In return, I'd like to offer you access to my shop's special
-    spices. I'll even give you a discounted rate!
-  targetVolume: 8000
+  failureText: "My, my, brewer! This simply won\u2019t do at all. I couldn\u2019t
+    possibly serve this to my guests. As a precaution, I\u2019ve had my maid pour
+    the whole lot into the river. Do better next time, won\u2019t you darling?"
+  passText: "The brew you sent me is delectable! My guests simply adored it. It was
+    just what people needed in this tumultuous time. Between you and I, however,
+    Guard-Captain Albin let it slip that Reizveldian forces have been spotted moving
+    towards the city. Stay safe, brewer! As thanks for your excellent work, I have
+    opened my stores of Spices to you. I\u2019m sure you\u2019ll find they add a
+    certain elegance and class to your mead. I\u2019ve also sent you my old Pestle
+    and Mortar, as a token of my respect."
+  targetVolume: 6000
   targetMinSweetness: 0
   targetMaxSweetness: 100
   targetMinCitrus: 11
@@ -47,6 +59,6 @@ MonoBehaviour:
   targetMaxEarthy: 100
   targetMinGreen: 0
   targetMaxGreen: 100
-  targetMinAge: 0
+  targetMinAge: 2
   targetMinAlcohol: 11
   targetMaxAlcohol: 100

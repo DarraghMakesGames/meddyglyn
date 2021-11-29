@@ -22,6 +22,8 @@ MonoBehaviour:
     only 1L (a single bottle) to judge the batch.
   time: 0
   reward: 75
+  rewardText: ', Fruits ingredients unlocked, Brewery Deed trophy added, New Contracts
+    Available'
   questContract: 1
   questReward: TutorialCompleted
   failureText: 'It seems my faith in you was unfounded. You have failed to produce

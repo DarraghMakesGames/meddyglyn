@@ -16,7 +16,7 @@ public class SuccessPopulate : MonoBehaviour
         contract = GetComponentInParent<MasterTracker>().contract;
         nameText.text = contract.contractName + ": Success!";
         successText.text = contract.passText;
-        rewardSummary.text = "Reward: " + contract.reward.ToString();
+        rewardSummary.text = "Reward: " + contract.reward.ToString() + "gp" + contract.rewardText;
 
     }
 

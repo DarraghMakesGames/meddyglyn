@@ -13,19 +13,28 @@ MonoBehaviour:
   m_Name: Beginnings
   m_EditorClassIdentifier: 
   contractName: Beginnings
-  description: Congratulations, mead-maker! You are embarking on a brewing adventure
-    steeped in history. To get started, let's make a basic mead. Add some honey and
-    yeast to the brewing vessel, then finish it off with some water. When it's finished
-    fermenting, bottle it, put it in the wagon downstairs and mark it as complete.
+  description: Greetings, novice meadmaker. I am Elphias, former master of the brewery
+    you find yourself in. Before I pass the deed of ownership to you, you must prove
+    yourself. Brew me a batch of mead. Combine honey, yeast and water in the brewing
+    vessel, wait for it to finish fermenting, then bottle it. Bring the finished
+    product to the wagon on the ground floor and mark this contract as complete at
+    the Fulfilment Sign. If it is adequate, I will certify you as a brewer. I require
+    only 1L (a single bottle) to judge the batch.
   time: 0
   reward: 75
   questContract: 1
   questReward: TutorialCompleted
-  failureText: 
-  passText: Congratulations! You've brewed your first batch of mead. New contracts
-    have been unlocked. Don't forget you can sell any mead left over at the sales
-    counters!
-  targetVolume: 0
+  failureText: 'It seems my faith in you was unfounded. You have failed to produce
+    even the most basic mead. This is an insult. '
+  passText: "This will suffice. You have much to learn, but I am satisfied that you
+    won\u2019t bring ruin on the brewery immediately. You are officially registered
+    as the owner of the brewery and a Mead Maker in good standing in the city of
+    Matzig. Enclosed is a small sum of gold to help you get started. I\u2019ve also
+    asked my friend Hubert, the local greengrocer, to supply you with some fruits
+    to start flavouring your brews. Be aware \u2013 the local Duke requires all business
+    owners to pay fees regularly to stay open. Make sure you have enough gold to
+    pay the Duke!"
+  targetVolume: 1000
   targetMinSweetness: 0
   targetMaxSweetness: 100
   targetMinCitrus: 0

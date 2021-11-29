@@ -16,6 +16,7 @@ public class StoryTracker : MonoBehaviour
     [SerializeField] private ContractRandomiser randomiser;
 
     [SerializeField] private UnityEvent Tutorial;
+    [SerializeField] private UnityEvent GoodGraces;
     [SerializeField] private UnityEvent Spice;
 
     public static Contract nextContract;
@@ -67,6 +68,11 @@ public class StoryTracker : MonoBehaviour
         Tutorial.Invoke();
         randomiser.populate = true;
         randomiser.StartCoroutine("TriggerPopulate");
+    }
+
+    public void InGoodGraces()
+    {
+        GoodGraces.Invoke();
     }
 
     public void SpiceMerchant()

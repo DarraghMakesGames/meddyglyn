@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
+  m_Name: ANightToRemember
+  m_EditorClassIdentifier: 
+  contractName: A Night to Remember
+  description: "Brewer \u2013 I believe it is high time I corresponded with you myself.
+    I am Duke Ardin von Matzig. Numerous advisors, local businesspeople and townsfolk
+    have spoken of your skill, dedication, and perseverance. As you know, the awful
+    war with our neighbours has ended and the plague has been cast from our city.
+    I would like to commission you to create a batch of mead for the celebratory
+    feasts taking place throughout Matzig. Brew for me 80L of the finest mead. High
+    in Alcohol, with Strong Floral and Citrus tastes, Average Earthy flavour, and
+    a subtle Tart finish. Avoid Bitter flavours at all costs \u2013 we\u2019ve seen
+    enough Bitterness for one lifetime. Age the lot for at least 10. Make it a night
+    to remember."
+  time: 0
+  reward: 250
+  rewardText: ', No more maintenance fees, Golden Dragon of Matzig trophy unlocked'
+  questContract: 1
+  questReward: NightRemember
+  failureText: "Brewer \u2013 not your best work. This won\u2019t do for the celebrations.
+    It\u2019s not every day you end a war and a plague, you know. Second best is
+    not good enough."
+  passText: The celebrations ran long into the night and, indeed, to the next day.
+    The city has never seen such wild abandon and joyful carousing. This is your
+    finest work, brewer. This mead brought strong men to tears and the multitudes
+    to their feet in song and dance. I hereby proclaim you Royal Meadmaker to the
+    Ducal family. Your services to the realm will never be forgotten. All business
+    fee licences for your brewery are hereby waived in perpetuity. Well done, brewer.
+    Well done. I award you the Golden Dragon of Matzig for your services to my family
+    and to the Duchy. There is no higher award for civilian service.
+  targetVolume: 80000
+  targetMinSweetness: 0
+  targetMaxSweetness: 100
+  targetMinCitrus: 11
+  targetMaxCitrus: 100
+  targetMinTart: 1
+  targetMaxTart: 5
+  targetMinSour: 0
+  targetMaxSour: 100
+  targetMinBitter: 0
+  targetMaxBitter: 0
+  targetMinWoody: 0
+  targetMaxWoody: 100
+  targetMinPeppery: 0
+  targetMaxPeppery: 100
+  targetMinFloral: 11
+  targetMaxFloral: 100
+  targetMinEarthy: 6
+  targetMaxEarthy: 10
+  targetMinGreen: 0
+  targetMaxGreen: 100
+  targetMinAge: 10
+  targetMinAlcohol: 11
+  targetMaxAlcohol: 100

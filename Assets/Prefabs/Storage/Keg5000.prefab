@@ -91,6 +91,9 @@ MonoBehaviour:
   bitter: 0
   woody: 0
   peppery: 0
+  floral: 0
+  earthy: 0
+  green: 0
   age: 0
   alcohol: 0
   sweetnessRating: 
@@ -104,6 +107,10 @@ MonoBehaviour:
   bitterProp: 
   woodyProp: 
   pepperyProp: 
+  floralProp: 
+  earthyProp: 
+  greenProp: 
+  batchNumber: 0
   agingStarted: 0
 --- !u!114 &7958751714325110233
 MonoBehaviour:
@@ -257,6 +264,7 @@ GameObject:
   - component: {fileID: 6135489746246859851}
   - component: {fileID: 4794758460935390361}
   - component: {fileID: 7466012688932755559}
+  - component: {fileID: 3595485069438725202}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -336,11 +344,24 @@ CapsuleCollider:
   m_GameObject: {fileID: 7648747925572926968}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!65 &3595485069438725202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648747925572926968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6919759, y: 2, z: 0.76447034}
+  m_Center: {x: 0.04654178, y: 0, z: -0.0049417103}
 --- !u!1001 &7737895508329908945
 PrefabInstance:
   m_ObjectHideFlags: 0

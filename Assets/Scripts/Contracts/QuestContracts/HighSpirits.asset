@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
+  m_Name: HighSpirits
+  m_EditorClassIdentifier: 
+  contractName: High Spirits
+  description: Brewmaster, I am High Arcanloclast Florian of the Church of the Holy
+    Beacon. It is my duty to ensure the spiritual wellbeing of all the citizens of
+    Matzig. Understandably, spirits are low after the recent defeat at the battle
+    of the Tansy River. While I am reluctant to resort to pleasures of the flesh,
+    the products of your brewery seem to have made quite an impact on the city. Please
+    prepare 30L of mead. It should have an Average Alcohol content. Please ensure
+    it has strong Peppery flavour, Subtle Woody flavour, and Average Sour flavour.
+    It is my understanding that these flavours have medicinal properties. May the
+    Light go with you.
+  time: 0
+  reward: 175
+  rewardText: ', Herbs ingredients unlocked, Herblore Tome trophy added'
+  questContract: 1
+  questReward: HighSpirits
+  failureText: "I must thank you for your efforts, but I am afraid this is insufficient.
+    I couldn\u2019t possibly distribute this to my congregation. Don\u2019t you think
+    they\u2019ve been through enough?"
+  passText: "Blessings on you, brewer. Your mastery of flavours is impressive. My
+    flock\u2019s spirits have risen, in no small part thanks to you. Despite some
+    of them growing ill from a new sickness I\u2019ve not seen before, I haven\u2019t
+    seen so many smiles since the start of the war. In thanks, I have given my herbalists
+    permission to supply your brewery with fresh Herbs. I have also included my personal
+    journal from my herbalist days \u2013 it contains much knowledge on herbcraft. "
+  targetVolume: 30000
+  targetMinSweetness: 0
+  targetMaxSweetness: 100
+  targetMinCitrus: 0
+  targetMaxCitrus: 100
+  targetMinTart: 0
+  targetMaxTart: 100
+  targetMinSour: 6
+  targetMaxSour: 10
+  targetMinBitter: 0
+  targetMaxBitter: 100
+  targetMinWoody: 1
+  targetMaxWoody: 5
+  targetMinPeppery: 11
+  targetMaxPeppery: 100
+  targetMinFloral: 0
+  targetMaxFloral: 100
+  targetMinEarthy: 0
+  targetMaxEarthy: 100
+  targetMinGreen: 0
+  targetMaxGreen: 100
+  targetMinAge: 0
+  targetMinAlcohol: 6
+  targetMaxAlcohol: 10

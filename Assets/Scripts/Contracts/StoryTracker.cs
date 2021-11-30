@@ -19,6 +19,7 @@ public class StoryTracker : MonoBehaviour
     [SerializeField] private UnityEvent GoodGraces;
     [SerializeField] private UnityEvent Spice;
     [SerializeField] private UnityEvent ForWantOfAnAle;
+    [SerializeField] private UnityEvent HerbLife;
 
     public static Contract nextContract;
     [SerializeField] private Contract nextContractReadout;
@@ -84,6 +85,11 @@ public class StoryTracker : MonoBehaviour
     public void GuardCaptain()
     {
         ForWantOfAnAle.Invoke();
+    }
+
+    public void HighSpirits()
+    {
+        HerbLife.Invoke();
     }
 
 }

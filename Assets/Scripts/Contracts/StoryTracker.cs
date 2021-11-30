@@ -12,6 +12,8 @@ public class StoryTracker : MonoBehaviour
     public Contract quest4;
     public Contract quest5;
     public Contract quest6;
+    public Contract quest7;
+    public Contract quest8;
 
     [SerializeField] private ContractRandomiser randomiser;
 
@@ -53,6 +55,12 @@ public class StoryTracker : MonoBehaviour
                 break;
             case 6:
                 nextContract = quest6;
+                break;
+            case 7:
+                nextContract = quest7;
+                break;
+            case 8:
+                nextContract = quest8;
                 break;
 
             default:

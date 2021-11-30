@@ -11,6 +11,7 @@ public class MasterTracker : MonoBehaviour
     [SerializeField] private Contract noContract;
 
     [SerializeField] private GameObject contractManager;
+    private FailureDescriptionGenerator failureGen;
 
     [SerializeField] private GameObject player;
 
@@ -22,6 +23,10 @@ public class MasterTracker : MonoBehaviour
     [SerializeField] GameObject pos6;
     [SerializeField] GameObject pos7;
     [SerializeField] GameObject pos8;
+
+    [SerializeField] private float targetVolume;
+    [SerializeField] private float actualVolume;
+    [SerializeField] private bool volumeMatches;
 
     [SerializeField] private bool pos1Matches;
     [SerializeField] private bool pos2Matches;
@@ -41,6 +46,7 @@ public class MasterTracker : MonoBehaviour
     private void Start()
     {
         contractManager = GameObject.Find("ContractManager");
+        failureGen = this.transform.GetComponent<FailureDescriptionGenerator>();
     }
 
     public void GetContract()
@@ -58,6 +64,18 @@ public class MasterTracker : MonoBehaviour
         pos6.SendMessage("CheckRequirements");
         pos7.SendMessage("CheckRequirements");
         pos8.SendMessage("CheckRequirements");
+
+        targetVolume = contract.targetVolume;
+        actualVolume = pos1.GetComponent<RequirementCheck>().actualVolume + pos2.GetComponent<RequirementCheck>().actualVolume + pos4.GetComponent<RequirementCheck>().actualVolume + pos5.GetComponent<RequirementCheck>().actualVolume + pos1.GetComponent<RequirementCheck>().actualVolume + pos6.GetComponent<RequirementCheck>().actualVolume + pos7.GetComponent<RequirementCheck>().actualVolume + pos8.GetComponent<RequirementCheck>().actualVolume;
+        if (actualVolume >= targetVolume)
+        {
+            volumeMatches = true;
+        }
+        else if (actualVolume < targetVolume)
+        {
+            volumeMatches = false;
+            failureGen.LackVolume();
+        }
 
 
         if (pos1.GetComponent<RequirementCheck>().meetsRequirements)
@@ -132,7 +150,7 @@ public class MasterTracker : MonoBehaviour
             pos8Matches = false;
         }
 
-        if (pos1Matches && pos2Matches && pos3Matches && pos4Matches && pos5Matches && pos6Matches && pos7Matches && pos8Matches)
+        if (pos1Matches && pos2Matches && pos3Matches && pos4Matches && pos5Matches && pos6Matches && pos7Matches && pos8Matches && volumeMatches)
         {
             allRequirementsMet = true;
         }
@@ -228,6 +246,8 @@ public class MasterTracker : MonoBehaviour
         {
             Destroy(pos8.gameObject.transform.GetChild(0).gameObject);
         }
+
+        actualVolume = 0;
     }
 
 }

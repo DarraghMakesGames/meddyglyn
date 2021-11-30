@@ -134,204 +134,197 @@ public class RequirementCheck : MonoBehaviour
         // If a requirement is not matched, it calls on the appropriate method in the FailureDescriptionGenerator script
         // This generates a human-readable description of where the brew fell short
 
-        //The following checks the target volume against the volume of the given batch
-        if (actualVolume >= targetVolume)
+        if (this.gameObject.transform.childCount > 0)
         {
-            matchesVolume = true;
-
-        }
-        else
-        {
-            matchesVolume = false;
-            failureGen.LackVolume();
-        }
-
-        //The following checks the target age against the age of the given batch
-        if (actualAge >= targetMinAge)
-        {
-            matchesAge = true;
-        }
-        else
-        {
-            matchesAge = false;
-            failureGen.LackAge();
-        }
+            //The following checks the target age against the age of the given batch
+            if (actualAge >= targetMinAge)
+            {
+                matchesAge = true;
+            }
+            else
+            {
+                matchesAge = false;
+                failureGen.LackAge();
+            }
 
 
-        if (actualSweetness >= targetMinSweetness && actualSweetness <= targetMaxSweetness)
-        {
-            matchesSweetness = true;
-        }
-        else if (actualSweetness < targetMinSweetness)
-        {
-            matchesSweetness = false;
-            failureGen.LackSweetness();
-        }
-        else if (actualSweetness > targetMaxSweetness)
-        {
-            matchesSweetness = false;
-            failureGen.OverSweetness();
+            if (actualSweetness >= targetMinSweetness && actualSweetness <= targetMaxSweetness)
+            {
+                matchesSweetness = true;
+            }
+            else if (actualSweetness < targetMinSweetness)
+            {
+                matchesSweetness = false;
+                failureGen.LackSweetness();
+            }
+            else if (actualSweetness > targetMaxSweetness)
+            {
+                matchesSweetness = false;
+                failureGen.OverSweetness();
+            }
+
+            if (actualAlcohol >= targetMinAlcohol && actualAlcohol <= targetMaxAlcohol)
+            {
+                matchesAlcohol = true;
+
+            }
+            else if (actualAlcohol < targetMinAlcohol)
+            {
+                matchesAlcohol = false;
+                failureGen.LackAlcohol();
+            }
+            else if (actualAlcohol > targetMaxAlcohol)
+            {
+                matchesAlcohol = false;
+                failureGen.OverAlcohol();
+            }
+
+            if (actualCitrus >= targetMinCitrus && actualCitrus <= targetMaxCitrus)
+            {
+                matchesCitrus = true;
+
+            }
+            else if (actualCitrus < targetMinCitrus)
+            {
+                matchesCitrus = false;
+                failureGen.LackCitrus();
+            }
+            else if (actualCitrus > targetMaxCitrus)
+            {
+                matchesCitrus = false;
+                failureGen.OverCitrus();
+            }
+
+            if (actualTart >= targetMinTart && actualTart <= targetMaxTart)
+            {
+                matchesTart = true;
+
+            }
+            else if (actualTart < targetMinTart)
+            {
+                matchesTart = false;
+                failureGen.LackTart();
+            }
+            else if (actualTart > targetMaxTart)
+            {
+                matchesTart = false;
+                failureGen.OverTart();
+            }
+
+            if (actualSour >= targetMinSour && actualSour <= targetMaxSour)
+            {
+                matchesSour = true;
+
+            }
+            else if (actualSour < targetMinSour)
+            {
+                matchesSour = false;
+                failureGen.LackSour();
+            }
+            else if (actualSour > targetMaxSour)
+            {
+                matchesSour = false;
+                failureGen.OverSour();
+            }
+
+            if (actualBitter >= targetMinBitter && actualBitter <= targetMaxBitter)
+            {
+                matchesBitter = true;
+
+            }
+            else if (actualBitter < targetMinBitter)
+            {
+                matchesBitter = false;
+                failureGen.LackBitter();
+            }
+            else if (actualBitter > targetMaxBitter)
+            {
+                matchesBitter = false;
+                failureGen.OverBitter();
+            }
+
+            if (actualWoody >= targetMinWoody && actualWoody <= targetMaxWoody)
+            {
+                matchesWoody = true;
+
+            }
+            else if (actualWoody < targetMinWoody)
+            {
+                matchesWoody = false;
+                failureGen.LackWoody();
+            }
+            else if (actualWoody > targetMaxWoody)
+            {
+                matchesWoody = false;
+                failureGen.OverWoody();
+            }
+
+            if (actualPeppery >= targetMinPeppery && actualPeppery <= targetMaxPeppery)
+            {
+                matchesPeppery = true;
+
+            }
+            else if (actualPeppery < targetMinPeppery)
+            {
+                matchesPeppery = false;
+                failureGen.LackPeppery();
+            }
+            else if (actualPeppery > targetMaxPeppery)
+            {
+                matchesPeppery = false;
+                failureGen.OverPeppery();
+            }
+
+            if (actualFloral >= targetMinFloral && actualFloral <= targetMaxFloral)
+            {
+                matchesFloral = true;
+
+            }
+            else if (actualFloral < targetMinFloral)
+            {
+                matchesFloral = false;
+                failureGen.LackFloral();
+            }
+            else if (actualFloral > targetMaxFloral)
+            {
+                matchesFloral = false;
+                failureGen.OverFloral();
+            }
+
+            if (actualEarthy >= targetMinEarthy && actualEarthy <= targetMaxEarthy)
+            {
+                matchesEarthy = true;
+
+            }
+            else if (actualEarthy < targetMinEarthy)
+            {
+                matchesEarthy = false;
+                failureGen.LackEarthy();
+            }
+            else if (actualEarthy > targetMaxEarthy)
+            {
+                matchesEarthy = false;
+                failureGen.OverEarthy();
+            }
+
+            if (actualGreen >= targetMinGreen && actualGreen <= targetMaxGreen)
+            {
+                matchesGreen = true;
+
+            }
+            else if (actualGreen < targetMinGreen)
+            {
+                matchesGreen = false;
+                failureGen.LackGreen();
+            }
+            else if (actualGreen > targetMaxGreen)
+            {
+                matchesGreen = false;
+                failureGen.OverGreen();
+            }
         }
 
-        if (actualAlcohol >= targetMinAlcohol && actualAlcohol <= targetMaxAlcohol)
-        {
-            matchesAlcohol = true;
 
-        }
-        else if (actualAlcohol < targetMinAlcohol)
-        {
-            matchesAlcohol = false;
-            failureGen.LackAlcohol();
-        }
-        else if (actualAlcohol > targetMaxAlcohol)
-        {
-            matchesAlcohol = false;
-            failureGen.OverAlcohol();
-        }
-
-        if (actualCitrus >= targetMinCitrus && actualCitrus <= targetMaxCitrus)
-        {
-            matchesCitrus = true;
-
-        }
-        else if (actualCitrus < targetMinCitrus)
-        {
-            matchesCitrus = false;
-            failureGen.LackCitrus();
-        }
-        else if (actualCitrus > targetMaxCitrus)
-        {
-            matchesCitrus = false;
-            failureGen.OverCitrus();
-        }
-
-        if (actualTart >= targetMinTart && actualTart <= targetMaxTart)
-        {
-            matchesTart = true;
-
-        }
-        else if (actualTart < targetMinTart)
-        {
-            matchesTart = false;
-            failureGen.LackTart();
-        }
-        else if (actualTart > targetMaxTart)
-        {
-            matchesTart = false;
-            failureGen.OverTart();
-        }
-
-        if (actualSour >= targetMinSour && actualSour <= targetMaxSour)
-        {
-            matchesSour = true;
-
-        }
-        else if (actualSour < targetMinSour)
-        {
-            matchesSour = false;
-            failureGen.LackSour();
-        }
-        else if (actualSour > targetMaxSour)
-        {
-            matchesSour = false;
-            failureGen.OverSour();
-        }
-
-        if (actualBitter >= targetMinBitter && actualBitter <= targetMaxBitter)
-        {
-            matchesBitter = true;
-
-        }
-        else if (actualBitter < targetMinBitter)
-        {
-            matchesBitter = false;
-            failureGen.LackBitter();
-        }
-        else if (actualBitter > targetMaxBitter)
-        {
-            matchesBitter = false;
-            failureGen.OverBitter();
-        }
-
-        if (actualWoody >= targetMinWoody && actualWoody <= targetMaxWoody)
-        {
-            matchesWoody = true;
-
-        }
-        else if (actualWoody < targetMinWoody)
-        {
-            matchesWoody = false;
-            failureGen.LackWoody();
-        }
-        else if (actualWoody > targetMaxWoody)
-        {
-            matchesWoody = false;
-            failureGen.OverWoody();
-        }
-
-        if (actualPeppery >= targetMinPeppery && actualPeppery <= targetMaxPeppery)
-        {
-            matchesPeppery = true;
-
-        }
-        else if (actualPeppery < targetMinPeppery)
-        {
-            matchesPeppery = false;
-            failureGen.LackPeppery();
-        }
-        else if (actualPeppery > targetMaxPeppery)
-        {
-            matchesPeppery = false;
-            failureGen.OverPeppery();
-        }
-
-        if (actualFloral >= targetMinFloral && actualFloral <= targetMaxFloral)
-        {
-            matchesFloral = true;
-
-        }
-        else if (actualFloral < targetMinFloral)
-        {
-            matchesFloral = false;
-            failureGen.LackFloral();
-        }
-        else if (actualFloral > targetMaxFloral)
-        {
-            matchesFloral = false;
-            failureGen.OverFloral();
-        }
-
-        if (actualEarthy >= targetMinEarthy && actualEarthy <= targetMaxEarthy)
-        {
-            matchesEarthy = true;
- 
-        }
-        else if (actualEarthy < targetMinEarthy)
-        {
-            matchesEarthy = false;
-            failureGen.LackEarthy();
-        }
-        else if (actualEarthy > targetMaxEarthy)
-        {
-            matchesEarthy = false;
-            failureGen.OverEarthy();
-        }
-
-        if (actualGreen >= targetMinGreen && actualGreen <= targetMaxGreen)
-        {
-            matchesGreen = true;
-            
-        }
-        else if (actualGreen < targetMinGreen)
-        {
-            matchesGreen = false;
-            failureGen.LackGreen();
-        }
-        else if (actualGreen > targetMaxGreen)
-        {
-            matchesGreen = false;
-            failureGen.OverGreen();
-        }
 
 
         if (matchesSweetness && matchesAge && matchesAlcohol && matchesCitrus && matchesTart && matchesSour && matchesBitter && matchesWoody && matchesPeppery && matchesFloral && matchesEarthy && matchesGreen || this.gameObject.transform.childCount < 1)

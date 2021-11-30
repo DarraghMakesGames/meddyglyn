@@ -23,6 +23,7 @@ public class StoryTracker : MonoBehaviour
     [SerializeField] private UnityEvent ForWantOfAnAle;
     [SerializeField] private UnityEvent HerbLife;
     [SerializeField] private UnityEvent Splash;
+    [SerializeField] private UnityEvent Sickness;
 
     public static Contract nextContract;
     [SerializeField] private Contract nextContractReadout;
@@ -104,6 +105,11 @@ public class StoryTracker : MonoBehaviour
     public void SplashDamage()
     {
         Splash.Invoke();
+    }
+
+    private void DownWithTheSickness()
+    {
+        Sickness.Invoke();
     }
 
 }

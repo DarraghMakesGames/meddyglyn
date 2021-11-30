@@ -36,11 +36,10 @@ MonoBehaviour:
     sacred Meddyglyn! Those who have drunk of it have grown well again. In solidarity,
     we even shared some with our enemies, the Reizveldians, who were sick also. In
     gratitude, a lasting ceasefire has been called. It may be peace for good! You
-    have done a wonderful thing, brewer. I have taken the liberty of having the Royal
-    Architects build an extension to your brewery, worthy of a master meadmaker.
-    I have also included with this missive the Chalice of Convalescence \u2013 it
-    has long been a symbol of healing in our faith. Keep it in memory of this deed
-    you have done."
+    have done a wonderful thing, brewer. I have taken the liberty of commissioning
+    additional equipment for your brewer, worthy of a master meadmaker. I have also
+    included with this missive the Chalice of Convalescence \u2013 it has long been
+    a symbol of healing in our faith. Keep it in memory of this deed you have done."
   targetVolume: 50000
   targetMinSweetness: 0
   targetMaxSweetness: 100

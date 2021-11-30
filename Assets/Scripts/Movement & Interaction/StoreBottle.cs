@@ -51,10 +51,10 @@ public class StoreBottle : MonoBehaviour
 
             if (carriedObj.gameObject.CompareTag("Ingredient"))
             {
-                Debug.Log("Can't sell raw ingredients");
+                Debug.Log("Can't store raw ingredients");
             }
 
-            else if (carriedObj.gameObject.CompareTag("Storage"))
+            else if (carriedObj.gameObject.CompareTag("Storage") && carriedObj.gameObject.GetComponent<StorageManager>().capacity < 1100)
             {
                 Debug.Log("Storing bottle");
                 //carried.position = placedPos;

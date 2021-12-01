@@ -32,8 +32,10 @@ public class PlayerMovement : MonoBehaviour
         vertRotation = Mathf.Clamp(vertRotation, -verticalClamp, verticalClamp);
         Vector3 targetRotation = transform.eulerAngles;
         targetRotation.x = vertRotation;
-        playerCamera.eulerAngles = targetRotation;
-
+        playerController.transform.eulerAngles = new Vector3 (playerController.transform.eulerAngles.x, targetRotation.y, playerController.transform.eulerAngles.z);
+        playerCamera.eulerAngles = new Vector3 (targetRotation.x, playerCamera.eulerAngles.y, targetRotation.z);
+        playerController.transform.forward = playerCamera.forward;
+        
         //Horizontal movement
         playerController.Move(moveSpeed * Time.deltaTime * movement);
 
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         movement.y += gravity * Time.deltaTime;
         Vector3 moveV = new Vector3(0f, movement.y, 0f);
         playerController.Move(moveV * Time.deltaTime);
+
 
     }
 

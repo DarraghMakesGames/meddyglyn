@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GoldCount : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GoldCount : MonoBehaviour
     public Text goldReadout;
     [SerializeField] private GameObject affordNotification;
     private AudioSource pickupCoinSound;
+    public int maintenanceCost = 25;
+
+    [SerializeField] private UnityEvent outOfCash; 
 
     private void Start()
     {
@@ -39,6 +43,19 @@ public class GoldCount : MonoBehaviour
     public void CannotAfford()
     {
         affordNotification.SetActive(true);
+    }
+
+    public void Maintenance()
+    {
+        if (gold >= maintenanceCost)
+        {
+            SpendGold(maintenanceCost);
+        }
+        else
+        {
+            outOfCash.Invoke();
+        }
+        
     }
 
 }

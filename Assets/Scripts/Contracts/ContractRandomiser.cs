@@ -6,7 +6,11 @@ public class ContractRandomiser : MonoBehaviour
 {
 
     public List<Contract> contractList;
-    public Contract[] allContracts;
+    //public Contract[] allContracts;
+
+    public Contract[] stage1Contracts;
+    public Contract[] stage2Contracts;
+    public Contract[] stage3Contracts;
 
     public bool populate = false;
     public static bool questActive = true;
@@ -23,9 +27,9 @@ public class ContractRandomiser : MonoBehaviour
 
     void Start()
     {
-        allContracts = Resources.LoadAll<Contract>("Contracts");
+        stage1Contracts = Resources.LoadAll<Contract>("Stage1");
 
-        foreach (Contract c in allContracts)
+        foreach (Contract c in stage1Contracts)
         {
             Debug.Log("prefab found: " + c.name);
             contractList.Add(c);
@@ -34,6 +38,30 @@ public class ContractRandomiser : MonoBehaviour
 
         StartCoroutine("TriggerPopulate");
 
+    }
+
+    public void Stage2()
+    {
+        stage2Contracts = Resources.LoadAll<Contract>("Stage2");
+
+        foreach (Contract c in stage2Contracts)
+        {
+            Debug.Log("prefab found: " + c.name);
+            contractList.Add(c);
+
+        }
+    }
+
+    public void Stage3()
+    {
+        stage3Contracts = Resources.LoadAll<Contract>("Stage3");
+
+        foreach (Contract c in stage3Contracts)
+        {
+            Debug.Log("prefab found: " + c.name);
+            contractList.Add(c);
+
+        }
     }
 
     private void Update()

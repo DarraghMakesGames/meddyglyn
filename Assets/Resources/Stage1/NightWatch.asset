@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
+  m_Name: NightWatch
+  m_EditorClassIdentifier: 
+  contractName: Night Watch
+  description: "Brewer \u2013 I am one of the night watchmen in the city guard. My
+    post gets a bit boring. Could you craft me some mead to drink on those long,
+    cold nights to keep me warm? Please keep it Low in Alcohol so I stay alert, and
+    can you give it Average Sour and Average Tart flavours so the taste is sharp
+    enough to keep me awake? 3L should be enough for the week."
+  reward: 120
+  rewardText: 
+  questContract: 0
+  questReward: 
+  failureText: "I won\u2019t lie to you, brewer, I was very disappointed to get this.
+    Somehow, drinking it made the nights feel even longer. Oh, cruel fate."
+  passText: "This stuff is fantastic! The night watch flies by drinking this. I doubt
+    my supervisor would agree, but I couldn\u2019t be happier!"
+  targetVolume: 3000
+  targetMinSweetness: 0
+  targetMaxSweetness: 100
+  targetMinCitrus: 0
+  targetMaxCitrus: 100
+  targetMinTart: 6
+  targetMaxTart: 10
+  targetMinSour: 6
+  targetMaxSour: 10
+  targetMinBitter: 0
+  targetMaxBitter: 100
+  targetMinWoody: 0
+  targetMaxWoody: 100
+  targetMinPeppery: 0
+  targetMaxPeppery: 100
+  targetMinFloral: 0
+  targetMaxFloral: 100
+  targetMinEarthy: 0
+  targetMaxEarthy: 100
+  targetMinGreen: 0
+  targetMaxGreen: 100
+  targetMinAge: 0
+  targetMinAlcohol: 1
+  targetMaxAlcohol: 5

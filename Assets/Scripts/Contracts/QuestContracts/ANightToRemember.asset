@@ -27,7 +27,7 @@ MonoBehaviour:
   reward: 250
   rewardText: ', No more maintenance fees, Golden Dragon of Matzig trophy unlocked'
   questContract: 1
-  questReward: NightRemember
+  questReward: NightToRemember
   failureText: "Brewer \u2013 not your best work. This won\u2019t do for the celebrations.
     It\u2019s not every day you end a war and a plague, you know. Second best is
     not good enough."

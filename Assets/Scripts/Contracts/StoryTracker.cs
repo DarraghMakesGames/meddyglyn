@@ -24,6 +24,7 @@ public class StoryTracker : MonoBehaviour
     [SerializeField] private UnityEvent HerbLife;
     [SerializeField] private UnityEvent Splash;
     [SerializeField] private UnityEvent Sickness;
+    [SerializeField] private UnityEvent Celebration;
 
     public static Contract nextContract;
     [SerializeField] private Contract nextContractReadout;
@@ -63,6 +64,10 @@ public class StoryTracker : MonoBehaviour
                 break;
             case 8:
                 nextContract = quest8;
+                break;
+            case 9:
+                nextContract = null;
+                Debug.Log("Main quests finished");
                 break;
 
             default:
@@ -107,9 +112,14 @@ public class StoryTracker : MonoBehaviour
         Splash.Invoke();
     }
 
-    private void DownWithTheSickness()
+    public void DownWithTheSickness()
     {
         Sickness.Invoke();
+    }
+
+    public void NightToRemember()
+    {
+        Celebration.Invoke();
     }
 
 }

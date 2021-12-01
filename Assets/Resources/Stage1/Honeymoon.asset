@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
+  m_Name: Honeymoon
+  m_EditorClassIdentifier: 
+  contractName: Honeymoon
+  description: "Dear brewer; My daughter is getting married in the coming weeks.
+    As is traditional, I would like to provide her and her new husband with a month\u2019s
+    worth of mead \u2013 their honey moon. Could you prepare that for me? I will
+    need at least 10L of Average Alcohol mead. My daughter likes fruit tastes, so
+    could you please make sure it has some Citrus, Sour and Tart flavours? Also make
+    sure it has High Sweetness, to represent the sweetness of young love."
+  reward: 150
+  rewardText: 
+  questContract: 0
+  questReward: 
+  failureText: I could not possibly shame my daughter with so paltry a wedding gift.
+    I will be taking my business elsewhere.
+  passText: Thank you, brewer. This will surely make a wonderful wedding gift. My
+    family sends their kindest regards.
+  targetVolume: 10000
+  targetMinSweetness: 11
+  targetMaxSweetness: 100
+  targetMinCitrus: 1
+  targetMaxCitrus: 100
+  targetMinTart: 1
+  targetMaxTart: 100
+  targetMinSour: 1
+  targetMaxSour: 100
+  targetMinBitter: 0
+  targetMaxBitter: 100
+  targetMinWoody: 0
+  targetMaxWoody: 100
+  targetMinPeppery: 0
+  targetMaxPeppery: 100
+  targetMinFloral: 0
+  targetMaxFloral: 100
+  targetMinEarthy: 0
+  targetMaxEarthy: 100
+  targetMinGreen: 0
+  targetMaxGreen: 100
+  targetMinAge: 0
+  targetMinAlcohol: 6
+  targetMaxAlcohol: 10

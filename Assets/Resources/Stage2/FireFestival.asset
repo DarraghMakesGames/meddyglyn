@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
+  m_Name: FireFestival
+  m_EditorClassIdentifier: 
+  contractName: Fire Festival
+  description: Hey brewer! We're organising a festival of song and dance called Fire
+    Festival! It's absolutely going to happen. Could you whip us up some fiery brews
+    to hand out at the door? We're thinking at least 15L of mead, with some Average
+    Woody and Peppery flavours. Oh, and it's gotta be High in Alcohol too.
+  time: 0
+  reward: 275
+  failureText: 
+  passText: 
+  targetVolume: 15000
+  targetMinSweetness: 0
+  targetMaxSweetness: 100
+  targetMinCitrus: 0
+  targetMaxCitrus: 0
+  targetMinTart: 0
+  targetMaxTart: 0
+  targetMinSour: 0
+  targetMaxSour: 0
+  targetMinBitter: 0
+  targetMaxBitter: 0
+  targetMinWoody: 5
+  targetMaxWoody: 10
+  targetMinPeppery: 5
+  targetMaxPeppery: 10
+  targetMinFloral: 0
+  targetMaxFloral: 0
+  targetMinEarthy: 0
+  targetMaxEarthy: 0
+  targetMinGreen: 0
+  targetMaxGreen: 0
+  targetMinAge: 0
+  targetMinAlcohol: 11
+  targetMaxAlcohol: 100

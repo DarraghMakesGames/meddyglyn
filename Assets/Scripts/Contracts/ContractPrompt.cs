@@ -35,16 +35,19 @@ public class ContractPrompt : MonoBehaviour
         {
             ContractManager.contract1 = contract;
             ContractManager.contract1filled = true;
+            contractOfferPosition.GetComponent<ReadContract>().contract = null;
         }
         else if (ContractManager.contract2filled == false)
         {
             ContractManager.contract2 = contract;
             ContractManager.contract2filled = true;
+            contractOfferPosition.GetComponent<ReadContract>().contract = null;
         }
         else if (ContractManager.contract3filled == false)
         {
             ContractManager.contract3 = contract;
             ContractManager.contract3filled = true;
+            contractOfferPosition.GetComponent<ReadContract>().contract = null;
         }
         else
         {

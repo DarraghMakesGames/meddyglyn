@@ -14,6 +14,7 @@ public class ContractManager : MonoBehaviour
     public static bool contract1filled = false;
     public static bool contract2filled = false;
     public static bool contract3filled = false;
+    public static bool allContractsFilled = false;
 
     [SerializeField] private Contract setContract1;
     [SerializeField] private Contract setContract2;
@@ -50,6 +51,16 @@ public class ContractManager : MonoBehaviour
         wagon1.GetComponent<MasterTracker>().contract = contract1;
         wagon2.GetComponent<MasterTracker>().contract = contract2;
         wagon3.GetComponent<MasterTracker>().contract = contract3;
+
+        if (contract1filled && contract2filled && contract3filled)
+        {
+            allContractsFilled = true;
+        }
+        else
+        {
+            allContractsFilled = false;
+        }
+
     }
 
 }

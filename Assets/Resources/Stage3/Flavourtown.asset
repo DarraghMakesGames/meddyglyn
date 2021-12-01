@@ -12,35 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf1cdcdb78b5c94bb4fb025b14b2aa3, type: 3}
   m_Name: Flavourtown
   m_EditorClassIdentifier: 
-  contractName: 
-  description: 
-  reward: 0
+  contractName: Flavourtown
+  description: "Hey Brewer! I\u2019m looking for a majorly complex mead. Something
+    that hits lots of notes at once. Can you make me at least 25L of mead? It should
+    have High Sweetness, Strong Sour, Subtle Citrus, Subtle Peppery, Strong Woody,
+    Average Floral and Strong Earthy flavours. I know it sounds crazy, but I want
+    to take the mead train all the way to Flavourtown! I don\u2019t care what Alcohol
+    content it has."
+  reward: 300
   rewardText: 
   questContract: 0
   questReward: 
-  failureText: 
-  passText: 
-  targetVolume: 0
-  targetMinSweetness: 0
-  targetMaxSweetness: 0
-  targetMinCitrus: 0
-  targetMaxCitrus: 0
+  failureText: "Man. This isn\u2019t flavourtown. This is flavour-less. I wanted
+    a taste sensation but you just didn\u2019t deliver. What a shame."
+  passText: "Wow oh wow! This is flavourlicious! It\u2019s like a party in my mouth
+    and a crowd of people who neither know nor like each other all attended! Great
+    job, brewer."
+  targetVolume: 25000
+  targetMinSweetness: 11
+  targetMaxSweetness: 100
+  targetMinCitrus: 1
+  targetMaxCitrus: 5
   targetMinTart: 0
-  targetMaxTart: 0
-  targetMinSour: 0
-  targetMaxSour: 0
+  targetMaxTart: 100
+  targetMinSour: 11
+  targetMaxSour: 100
   targetMinBitter: 0
-  targetMaxBitter: 0
-  targetMinWoody: 0
-  targetMaxWoody: 0
-  targetMinPeppery: 0
-  targetMaxPeppery: 0
-  targetMinFloral: 0
-  targetMaxFloral: 0
-  targetMinEarthy: 0
-  targetMaxEarthy: 0
+  targetMaxBitter: 100
+  targetMinWoody: 11
+  targetMaxWoody: 100
+  targetMinPeppery: 1
+  targetMaxPeppery: 5
+  targetMinFloral: 6
+  targetMaxFloral: 10
+  targetMinEarthy: 11
+  targetMaxEarthy: 100
   targetMinGreen: 0
-  targetMaxGreen: 0
+  targetMaxGreen: 100
   targetMinAge: 0
-  targetMinAlcohol: 0
-  targetMaxAlcohol: 0
+  targetMinAlcohol: 1
+  targetMaxAlcohol: 100

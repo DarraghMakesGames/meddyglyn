@@ -53,6 +53,14 @@ public class GameManager : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;
     }
 
+    public void NoMenuPause()
+    {
+        gameUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Confined;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        Time.timeScale = 0;
+    }
+
     public void ToggleContractLedger()
     {
         if (!contractLedger.activeSelf)

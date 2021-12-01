@@ -155,7 +155,7 @@ MonoBehaviour:
   uiName: Keg (5000ml)
   uiDescription: An oak keg, made for storing and aging alcohol. Anyone know how
     to tap it?
-  uiProperties: 
+  uiProperties: 'Contains: Empty'
 --- !u!82 &-1071534041099563089
 AudioSource:
   m_ObjectHideFlags: 0

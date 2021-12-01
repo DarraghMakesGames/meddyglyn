@@ -156,7 +156,7 @@ MonoBehaviour:
   uiName: Barrel (10000ml)
   uiDescription: An oak, iron-bound barrel, made for storing and aging alcohol. Do
     a barrel roll!
-  uiProperties: 
+  uiProperties: 'Contains: Empty'
 --- !u!82 &-1071534041099563089
 AudioSource:
   m_ObjectHideFlags: 0

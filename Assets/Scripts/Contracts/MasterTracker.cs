@@ -7,6 +7,8 @@ public class MasterTracker : MonoBehaviour
     public Contract contract;
     [SerializeField] private GameObject goldCount;
 
+    [SerializeField] AudioSource contractSound;
+
     [SerializeField] private int wagonNumber;
     [SerializeField] private Contract noContract;
 
@@ -47,11 +49,13 @@ public class MasterTracker : MonoBehaviour
     {
         contractManager = GameObject.Find("ContractManager");
         failureGen = this.transform.GetComponent<FailureDescriptionGenerator>();
+        contractSound = this.GetComponent<AudioSource>();
     }
 
     public void GetContract()
     {
         contract = ContractManager.currentContract;
+        contractSound.PlayOneShot(contractSound.clip, 1);
     }
 
     public void CheckRequirements()

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d76bc07e67d049a6fd5b6fed83ac2, type: 3}
+  m_Name: StorageRacksTutorial
+  m_EditorClassIdentifier: 
+  tutorialName: Storage Racks
+  tutorialText: "These Storage Racks allow you to easily store and retrieve your
+    brews. Bottles can be stored on the top shelves, while Kegs and Barrels (unlocked
+    later in the game) can be stored on the bottom shelf. This can be useful if you\u2019re
+    waiting for the market to change in your favour, or if you are waiting for a
+    brew to age. While you can simply drop your brews on the ground (like an animal),
+    it\u2019s neater to use the storage racks."
+  tutorialImage: {fileID: 21300000, guid: 884bd2fdacf69964bb7545f900d09383, type: 3}

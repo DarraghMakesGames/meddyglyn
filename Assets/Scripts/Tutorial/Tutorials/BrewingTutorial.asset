@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d76bc07e67d049a6fd5b6fed83ac2, type: 3}
+  m_Name: BrewingTutorial
+  m_EditorClassIdentifier: 
+  tutorialName: Brewing
+  tutorialText: "This is a Brewing Vessel! By adding honey, water, and yeast to this,
+    you can make mead. You\u2019ll know it\u2019s working when it starts foaming,
+    fizzing and bubbling! This means it is fermenting some of its Sweetness to make
+    Alcohol. Note that this may reduce the overall level of Sweetness in the brew!
+    Press R to Examine the vessel. This will show you how much Honey and Water have
+    been added, how much room is left, as well as the strengths of whatever Flavours
+    it may have. Be aware: when you add Water, all Flavours are diluted! Larger Vessels
+    (which you\u2019ll unlock later) will require more Ingredients to achieve the
+    same strength of flavours as smaller Vessels. However, no matter their size,
+    all Vessels require only 1 helping of Yeast to start fermenting! You\u2019ll
+    know Fermentation is finished when the foaming and bubbling stops."
+  tutorialImage: {fileID: 21300000, guid: b50fa23dd480d6149b79d1f77874b8ca, type: 3}

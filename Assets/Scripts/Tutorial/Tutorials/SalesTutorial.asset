@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d76bc07e67d049a6fd5b6fed83ac2, type: 3}
+  m_Name: SalesTutorial
+  m_EditorClassIdentifier: 
+  tutorialName: The Sales Counter
+  tutorialText: Here you will find the Sales Counter. There are 4 Sales Positions,
+    on which you can place any finished, Stored mead. While carrying a Bottle, Keg
+    or Barrel, simply press E while looking at any of the positions. After a short
+    period of time, someone will buy the mead it will be replaced by a pile of gold
+    coins! Press E to pick them up. The open market is constantly in flux. Check
+    what Flavours are currently Popular or Unpopular by Examining (Press R) the Market
+    Ledger. Selling a mead with a Popular flavour will multiply your profits! Selling
+    something with an Unpopular flavour, however, will result in a lower profit,
+    potentially even a loss on the batch!
+  tutorialImage: {fileID: 21300000, guid: 48133aeb2231ee74196a129e78b55ea3, type: 3}

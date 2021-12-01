@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d76bc07e67d049a6fd5b6fed83ac2, type: 3}
+  m_Name: StorageTutorial
+  m_EditorClassIdentifier: 
+  tutorialName: Storage
+  tutorialText: "This table contains means of storing your finished batches of mead.
+    At the moment, you only have access to Bottles, which contain 1 litre each. Buy
+    a Bottle by pressing E on the Bottle Storage. While carrying the Bottle, Press
+    E while looking at a Vessel that contains a finished batch. This will drain 1L
+    of the batch and place it in the Bottle. Press R while holding or looking at
+    a Bottle to examine what\u2019s inside! This will show the Sweetness, Alcohol,
+    and the strength of any Flavours present. You can then use the Bottle at the
+    Sales Counter to sell it on the open market, or in the Wagon Room to complete
+    a Contract. Any mead stored in this way will Age. Aging a brew will slightly
+    increase its value, and some Contracts will specify a minimum Age."
+  tutorialImage: {fileID: 21300000, guid: c23cc63895b863a41bed20a46ab41422, type: 3}

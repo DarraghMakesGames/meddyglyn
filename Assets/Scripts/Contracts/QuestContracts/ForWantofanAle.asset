@@ -22,7 +22,6 @@ MonoBehaviour:
     the tourney. Please prepare at least 10L of mead with Strong Alcohol, High Sweetness,
     and some amount of Peppery, Tart and Woody flavours. A proper soldier\u2019s
     brew! Please avoid any Citrus flavour."
-  time: 0
   reward: 150
   rewardText: ", 2 new 10L Brewing Vessels, Guard-Captain\u2019s Dagger trophy added"
   questContract: 1
@@ -31,7 +30,7 @@ MonoBehaviour:
     It\u2019s imperative that we attract as many potential recruits as possible;
     as such, we need the best of the best. I am disappointed. Both the Chamberlain
     and Spice Merchant Kiera spoke highly of your abilities."
-  passText: "What a tourney that was! 3 score and 6 entrants, most of whom signed
+  passText: "What a tourney that was! Nearly a hundred entrants, most of whom signed
     up for the militia that same day. No doubt others from the crowd will follow
     suit. The winner showed immense skill and no doubt he will slay many Reizveld
     invaders. Certainly the quality of the mead on offer as the prize played a role

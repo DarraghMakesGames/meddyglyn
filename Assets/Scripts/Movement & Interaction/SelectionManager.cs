@@ -21,7 +21,6 @@ public class SelectionManager : MonoBehaviour
 
             interactText = null;
             interactionPrompt.SetActive(false);
-            //reticleRenderer.material.color = Color.white;
             _selection = null;
         }
 
